@@ -44833,8 +44833,25 @@ a.u-link.u-text-hover-grey-90:hover {
     margin-right: 126px;
   }
 }
+@media (max-width: 991px) {
+  .u-header .u-image-1 {
+    margin-top: 14px;
+  }
 
+  .u-header .u-menu-2 {
+    width: auto;
+    margin-right: 125px;
+  }
 
+  .u-header .u-menu-3 {
+    margin-bottom: 19px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-menu-2 {
+    margin-right: 125px;
+  }
+}
 @media (max-width: 575px) {
   .u-header .u-menu-2 {
     margin-right: 79px;
