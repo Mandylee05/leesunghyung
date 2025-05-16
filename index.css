@@ -327,21 +327,6 @@
   .u-section-2 .u-image-4 {
     height: 298px;
   }
-}.u-section-3 .u-sheet-1 {
-  min-height: 400px;
-}
-
-.u-section-3 .u-custom-html-1 {
-  height: auto;
-  min-height: 400px;
-  margin: 0 auto;
-}
-
-@media (max-width: 1199px) {
-  .u-section-3 .u-custom-html-1 {
-    margin-right: initial;
-    margin-left: initial;
-  }
 }@font-face {
   font-family: 'Poppins-ExtraLight';
   font-style: normal;
