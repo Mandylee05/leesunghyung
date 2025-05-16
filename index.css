@@ -193,9 +193,11 @@
 
 .u-section-2 .u-gallery-nav-2 {
   position: absolute;
-  right: 10px;
   width: 40px;
   height: 40px;
+  left: auto;
+  top: 266px;
+  right: 10px;
 }
 
 @media (max-width: 1199px) {
