@@ -105,7 +105,7 @@
   min-height: 571px;
   grid-auto-columns: calc(33.3333% - 6.66667px);
   grid-template-columns: repeat(3, calc(33.3333% - 6.66667px));
-  grid-gap: 10px;
+  --gap: 10px;
 }
 
 .u-section-2 .u-container-layout-1 {
@@ -204,6 +204,7 @@
   .u-section-2 .u-repeater-1 {
     grid-auto-columns: calc(33.333333333333336% - 6.66667px);
     grid-template-columns: repeat(3, calc(33.333333333333336% - 6.66667px));
+    grid-gap: 10px;
   }
 
   .u-section-2 .u-image-1 {
