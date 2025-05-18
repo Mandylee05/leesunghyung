@@ -36,6 +36,11 @@
   background-image: none;
 }
 
+.u-block-bf79-96 {
+  font-weight: 700;
+  background-image: none;
+}
+
 .u-block-bf79-92 {
   font-weight: 700;
   background-image: none;
@@ -82,6 +87,12 @@
 }
 
 .u-section-1 .u-table-cell-6 {
+  background-image: none;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.u-section-1 .u-table-cell-7 {
   font-weight: 700;
 }
 
@@ -91,23 +102,19 @@
   padding: 0;
 }
 
-.u-section-1 .u-table-cell-8 {
+.u-section-1 .u-table-cell-9 {
+  font-weight: 700;
+}
+
+.u-section-1 .u-table-cell-10 {
   font-weight: 700;
 }
 
 .u-section-1 .u-btn-2 {
-  letter-spacing: 1px;
-  background-image: none;
   padding: 8px 23px;
 }
 
 .u-section-1 .u-btn-3 {
-  letter-spacing: 1px;
-  background-image: none;
-  border-style: solid;
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: none;
   padding: 7px 30px 9px;
 }
 
@@ -134,16 +141,6 @@
 
   .u-section-1 .u-table-1 {
     width: auto;
-  }
-
-  .u-section-1 .u-btn-2 {
-    border-style: solid;
-  }
-
-  .u-section-1 .u-btn-3 {
-    font-weight: 700;
-    font-size: 0.875rem;
-    padding: 10px 31px 11px 29px;
   }
 }
 
