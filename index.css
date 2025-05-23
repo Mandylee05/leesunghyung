@@ -103,7 +103,7 @@
 }
 
 .u-section-2 .u-repeater-1 {
-  min-height: 571px;
+  min-height: 627px;
   grid-auto-columns: calc(33.3333% - 6.66667px);
   grid-template-columns: repeat(3, calc(33.3333% - 6.66667px));
   --gap: 10px;
@@ -340,10 +340,6 @@
 }
 
 @media (max-width: 575px) {
-  .u-section-2 .u-list-1 {
-    min-height: 624px;
-  }
-
   .u-section-2 .u-repeater-1 {
     grid-auto-columns: 100%;
   }
