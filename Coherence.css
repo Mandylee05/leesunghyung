@@ -443,6 +443,11 @@
     width: 340px;
     height: 248px;
   }
+}@font-face {
+  font-family: 'Poppins-ExtraLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Poppins-ExtraLight.ttf);
 }
 /* page-custom-fonts */
 @font-face {

@@ -41,7 +41,7 @@
   grid-auto-columns: 100%;
   grid-template-columns: repeat(1, 100%);
   min-height: 621px;
-  grid-gap: 30px;
+  --gap: 30px;
 }
 
 .u-section-1 .u-container-layout-3 {
@@ -110,6 +110,7 @@
 
   .u-section-1 .u-repeater-1 {
     grid-template-columns: 100%;
+    grid-gap: 30px;
   }
 
   .u-section-1 .u-text-4 {
@@ -207,4 +208,10 @@
   .u-section-1 .u-text-10 {
     margin-right: 0;
   }
+}@font-face {
+  font-family: 'Poppins-ExtraLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Poppins-ExtraLight.ttf);
 }
+/* page-custom-fonts */

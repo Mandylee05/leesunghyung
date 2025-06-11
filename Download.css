@@ -207,4 +207,10 @@
   .u-section-1 .u-text-2 {
     width: 340px;
   }
+}@font-face {
+  font-family: 'Poppins-ExtraLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Poppins-ExtraLight.ttf);
 }
+/* page-custom-fonts */

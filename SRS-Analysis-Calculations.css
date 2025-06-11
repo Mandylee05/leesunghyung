@@ -79,7 +79,7 @@
     margin-top: 696px;
   }
 }.u-section-2 .u-sheet-1 {
-  min-height: 811px;
+  min-height: 812px;
 }
 
 .u-section-2 .u-text-1 {
@@ -94,7 +94,7 @@
 
 @media (max-width: 1199px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 731px;
+    min-height: 732px;
   }
 
   .u-section-2 .u-image-1 {
@@ -105,7 +105,7 @@
 
 @media (max-width: 991px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 604px;
+    min-height: 605px;
   }
 
   .u-section-2 .u-text-1 {
@@ -120,7 +120,7 @@
 
 @media (max-width: 767px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 500px;
+    min-height: 501px;
   }
 
   .u-section-2 .u-image-1 {
@@ -131,7 +131,7 @@
 
 @media (max-width: 575px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 384px;
+    min-height: 385px;
   }
 
   .u-section-2 .u-text-1 {
@@ -274,4 +274,10 @@
     width: 340px;
     height: 197px;
   }
+}@font-face {
+  font-family: 'Poppins-ExtraLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Poppins-ExtraLight.ttf);
 }
+/* page-custom-fonts */
