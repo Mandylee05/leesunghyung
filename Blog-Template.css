@@ -51,13 +51,14 @@
 
 .u-section-1 .u-blog-1 {
   margin-top: 12px;
-  margin-bottom: 0;
+  margin-bottom: 60px;
 }
 
 .u-section-1 .u-repeater-1 {
   grid-template-columns: repeat(3, calc(33.3333% - 14.6667px));
   min-height: 916px;
-  grid-gap: 22px;
+  --gap: 22px;
+  grid-auto-columns: calc(33.3333% - 14.6667px);
 }
 
 .u-section-1 .u-repeater-item-1 {
@@ -232,40 +233,12 @@
   padding: 0;
 }
 
-.u-section-1 .u-blog-2 {
-  margin-top: 30px;
-  margin-bottom: 60px;
-}
-
-.u-section-1 .u-repeater-2 {
-  grid-auto-columns: calc(50% - 5px);
-  grid-template-columns: repeat(2, calc(50% - 5px));
-  min-height: 355px;
-  grid-gap: 10px;
-}
-
-.u-section-1 .u-container-layout-7 {
-  padding: 30px;
-}
-
-.u-section-1 .u-image-7 {
-  height: 140px;
-  margin-top: 20px;
-}
-
-.u-section-1 .u-container-layout-8 {
-  padding: 30px;
-}
-
-.u-section-1 .u-image-8 {
-  height: 140px;
-  margin-top: 20px;
-}
-
 @media (max-width: 1199px) {
   .u-section-1 .u-repeater-1 {
     grid-template-columns: repeat(3, calc(33.333333333333336% - 14.6667px));
+    grid-gap: 22px;
     min-height: 753px;
+    grid-auto-columns: calc(33.333333333333336% - 14.6667px);
   }
 }
 
@@ -273,17 +246,14 @@
   .u-section-1 .u-repeater-1 {
     grid-template-columns: repeat(2, calc(50% - 11.000025px));
     min-height: 1325px;
-  }
-
-  .u-section-1 .u-repeater-2 {
-    grid-auto-columns: calc(100% - 0px);
-    grid-template-columns: 100%;
+    grid-auto-columns: calc(50% - 11.000025px);
   }
 }
 
 @media (max-width: 767px) {
   .u-section-1 .u-repeater-1 {
     grid-template-columns: 100%;
+    grid-auto-columns: calc(100% - 0px);
   }
 
   .u-section-1 .u-container-layout-1 {
@@ -315,19 +285,11 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+}
 
-  .u-section-1 .u-repeater-2 {
+@media (max-width: 575px) {
+  .u-section-1 .u-repeater-1 {
     grid-auto-columns: 100%;
-  }
-
-  .u-section-1 .u-container-layout-7 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .u-section-1 .u-container-layout-8 {
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }@font-face {
   font-family: 'Poppins-ExtraLight';

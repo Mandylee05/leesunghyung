@@ -72,6 +72,14 @@
   }
 }
 
+@media (max-width: 991px) {
+  .u-section-1 .u-text-2 {
+    width: auto;
+    margin-left: 49px;
+    margin-right: 49px;
+  }
+}
+
 @media (max-width: 767px) {
   .u-section-1 .u-text-1 {
     width: auto;
@@ -81,7 +89,8 @@
 
   .u-section-1 .u-text-2 {
     font-size: 1.25rem;
-    width: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .u-section-1 .u-gallery-1 {
