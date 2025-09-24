@@ -121,12 +121,16 @@
   font-weight: 700;
 }
 
-.u-section-1 .u-btn-2 {
-  padding: 8px 23px;
+.u-section-1 .u-icon-1 {
+  font-size: 2em;
 }
 
-.u-section-1 .u-btn-3 {
-  padding: 7px 30px 9px;
+.u-section-1 .u-icon-2 {
+  font-size: 2em;
+}
+
+.u-section-1 .u-icon-3 {
+  font-size: 2em;
 }
 
 .u-section-1 .u-table-cell-15 {
@@ -145,16 +149,16 @@
   font-weight: 700;
 }
 
-.u-section-1 .u-btn-4 {
-  padding: 8px 23px 8px 22px;
+.u-section-1 .u-icon-4 {
+  font-size: 2em;
 }
 
-.u-section-1 .u-btn-5 {
-  padding: 7px 30px 8px;
+.u-section-1 .u-icon-5 {
+  font-size: 2em;
 }
 
-.u-section-1 .u-btn-6 {
-  padding: 7px 28px 8px 27px;
+.u-section-1 .u-icon-6 {
+  font-size: 2em;
 }
 
 .u-block-bf79-35 {
@@ -180,14 +184,6 @@
 
   .u-section-1 .u-table-1 {
     width: auto;
-  }
-
-  .u-section-1 .u-btn-5 {
-    padding-bottom: 9px;
-  }
-
-  .u-section-1 .u-btn-6 {
-    padding-bottom: 9px;
   }
 }
 
