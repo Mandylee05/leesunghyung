@@ -46876,7 +46876,6 @@ a.u-link.u-text-hover-color-var:hover {
 }
 @media (max-width: 1199px) {
   .u-header .u-menu-1 {
-    margin-top: -39px;
     margin-right: 0;
   }
 }
@@ -46887,6 +46886,10 @@ a.u-link.u-text-hover-color-var:hover {
 
   .u-header .u-image-1 {
     margin-top: 12px;
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: -39px;
   }
 
   .u-header .u-menu-3 {
