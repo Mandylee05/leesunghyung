@@ -46408,7 +46408,7 @@ a.u-link.u-text-hover-color-var:hover {
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 720px;
         --theme-sheet-width-sm: 540px;
-        --theme-sheet-width-xs: 575px;
+        --theme-sheet-width-xs: 350px;
         
         
         
@@ -47042,7 +47042,14 @@ a.u-link.u-text-hover-color-var:hover {
     padding-right: 10px;
   }
 }
-
+@media (max-width: 575px) {
+  .u-footer .u-layout-wrap-1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
 
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
