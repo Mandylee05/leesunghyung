@@ -10,6 +10,7 @@
 .u-section-1 .u-text-1 {
   font-size: 3rem;
   line-height: 0.6;
+  font-weight: 300;
   margin: 200px auto 0;
 }
 
@@ -35,7 +36,6 @@
     --text-color-var: #2e4ba3;
     margin-top: 60px;
     margin-bottom: 60px;
-    font-weight: 300;
   }
 
   .u-section-1 .u-btn-1 {
