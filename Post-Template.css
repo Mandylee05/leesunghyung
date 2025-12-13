@@ -5,7 +5,7 @@
 .u-section-1 .u-post-details-1 {
   min-height: 375px;
   margin-top: 60px;
-  margin-bottom: 0;
+  margin-bottom: -10px;
 }
 
 .u-section-1 .u-container-layout-1 {
@@ -35,21 +35,6 @@
   margin-bottom: 0;
   margin-top: 20px;
   margin-left: 0;
-}
-
-.u-section-1 .u-post-details-2 {
-  min-height: 375px;
-  margin-top: 30px;
-  margin-bottom: 60px;
-}
-
-.u-section-1 .u-container-layout-2 {
-  padding: 30px;
-}
-
-.u-section-1 .u-image-2 {
-  height: 140px;
-  margin-top: 20px;
 }
 
 @media (max-width: 1199px) {
@@ -88,11 +73,6 @@
     margin-top: 9px;
     margin-left: initial;
   }
-
-  .u-section-1 .u-container-layout-2 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 
 @media (max-width: 575px) {
@@ -104,10 +84,4 @@
     height: 275px;
     margin-left: initial;
   }
-}@font-face {
-  font-family: 'Poppins-ExtraLight';
-  font-style: normal;
-  font-weight: 400;
-  src: url(fonts/Poppins-ExtraLight.ttf);
 }
-/* page-custom-fonts */
