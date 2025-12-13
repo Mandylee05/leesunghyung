@@ -46408,7 +46408,7 @@ a.u-link.u-text-hover-color-var:hover {
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 720px;
         --theme-sheet-width-sm: 540px;
-        --theme-sheet-width-xs: 420px;
+        --theme-sheet-width-xs: 575px;
         
         
         
@@ -46936,26 +46936,9 @@ a.u-link.u-text-hover-color-var:hover {
 .u-header .u-nav-2 {
   font-size: 1.25rem;
 }
-@media (max-width: 1199px) {
-   .u-header {
-    --color-var: #f8f7f1;
-    background-size: cover, cover;
-  }
 
-  .u-header .u-menu-1 {
-    width: auto;
-  }
-}
-@media (max-width: 991px) {
-  .u-header .u-menu-1 {
-    margin-top: -48px;
-  }
-}
-@media (max-width: 767px) {
-  .u-header .u-menu-1 {
-    margin-top: -48px;
-  }
-}
+
+
 
  .u-footer {
   background-position: 50% 50%, 50% 50%;
