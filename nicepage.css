@@ -46937,7 +46937,11 @@ a.u-link.u-text-hover-color-var:hover {
   font-size: 1.25rem;
 }
 
-
+@media (max-width: 991px) {
+  .u-header .u-image-1 {
+    margin-left: auto;
+  }
+}
 
 
  .u-footer {
