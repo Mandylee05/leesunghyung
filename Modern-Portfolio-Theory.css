@@ -160,16 +160,14 @@
   }
 
   .u-section-1 .u-text-2 {
-    margin-top: 39px;
     margin-left: 10px;
     margin-right: 10px;
   }
 
   .u-section-1 .u-list-1 {
-    width: 400px;
-    margin-top: 41px;
-    margin-left: -25px;
-    margin-right: -25px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
   }
 
   .u-section-1 .u-repeater-1 {
@@ -180,12 +178,12 @@
     height: 200px;
     width: 333px;
     margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -6px;
+    margin-right: -6px;
   }
 
   .u-section-1 .u-text-3 {
-    margin-bottom: -296px;
+    margin-bottom: 60px;
   }
 }.u-section-2 .u-sheet-1 {
   min-height: 373px;
