@@ -151,7 +151,7 @@
 .u-section-3 .u-image-1 {
   width: 1000px;
   height: 600px;
-  margin: 40px auto -200px;
+  margin: 40px auto;
 }
 
 @media (max-width: 1199px) {
