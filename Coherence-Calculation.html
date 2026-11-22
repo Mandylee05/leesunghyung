@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="Coherence-Calculation.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 8.3.7, nicepage.com">
+    <meta name="generator" content="Nicepage 9.0.8, nicepage.com">
+    
     
     
     
@@ -32,7 +33,7 @@
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
-        <nav class="u-align-right u-menu u-menu-one-level u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="LG">
+        <nav class="u-align-right u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
             <a class="u-button-style u-custom-text-color u-custom-text-hover-color u-hamburger-link u-nav-link" aria-label="Open menu" aria-controls="bb96" href="#">
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#svg-8176"></use></svg>
@@ -47,6 +48,8 @@
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="Coherence.html">Coherence</a>
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="SRS-Analysis-Transfer.html">SRS Analysis Transfer</a>
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="Modern-Portfolio-Theory.html">Modern Portfolio Theory</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="Seismic-Analysis.html">Seismic Analysis</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="Floor-Response-Spectrum.html">Floor Response Spectrum</a>
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="Download.html">Download</a>
 </li></ul>
           </div>
@@ -60,6 +63,8 @@
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Coherence.html">Coherence</a>
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="SRS-Analysis-Transfer.html">SRS Analysis Transfer</a>
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Modern-Portfolio-Theory.html">Modern Portfolio Theory</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Seismic-Analysis.html">Seismic Analysis</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Floor-Response-Spectrum.html">Floor Response Spectrum</a>
 </li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Download.html">Download</a>
 </li></ul>
               </div>
@@ -265,6 +270,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         <h2 class="u-align-center u-text u-text-default u-text-1">Coherence Calculation Example </h2>
         <img class="u-image u-image-contain u-image-default u-image-1" src="images/Example-3.png" alt="" data-image-width="3447" data-image-height="1063">
         <a href="Coherence.html" data-page-id="43607310" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Coherence">Return to the Coherence Page</a>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-color-var u-container-align-center u-section-9" id="block-4">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h5 class="u-align-center u-text u-text-default u-text-1">EXAMPLE 2</h5>
+        <h2 class="u-align-center u-text u-text-default u-text-2">Three-directional Seismic Input Example</h2>
+        <p class="u-align-center u-text u-text-3">This example checks the coherence between three-directional synthetic seismic accelerations (X and Y: PGA 0.30 g, Z: PGA 0.20 g, 20 s, dt = 0.005 s). The coherence is calculated with the Welch method (Hann window, 1024 points, 50 % overlap) and averaged in 1/3-octave bands from 0.5 Hz to 50 Hz. The average coherence of each pair is about 0.23 to 0.25 and the correlation coefficients are below 0.05, which shows that the three directional inputs are not correlated with each other.</p>
+        <img class="u-image u-image-contain u-image-default u-image-1" src="images/coh_input.png" alt="" data-image-width="1600" data-image-height="832">
+        <img class="u-image u-image-contain u-image-default u-image-2" src="images/coh_result.png" alt="" data-image-width="1480" data-image-height="893">
+        <a href="Coherence.html" data-page-id="43607310" class="u-active-custom-color-3 u-align-center u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Coherence">Return to the Coherence Page</a>
       </div>
     </section>
     
