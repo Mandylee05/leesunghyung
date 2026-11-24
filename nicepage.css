@@ -46513,7 +46513,7 @@ a.u-link.u-text-hover-color-var.hover {
   margin: 22px 0 0 auto;
 }
 
-.u-header .u-nav-2 {
+.u-header .u-nav-6 {
   font-size: 1.25rem;
   font-weight: 300;
 }
@@ -46521,7 +46521,20 @@ a.u-link.u-text-hover-color-var.hover {
 .u-header .u-image-1 {
   width: 60px;
   height: 60px;
-  margin: -48px auto 10px 0;
+  margin: -48px auto 0 0;
+}
+
+.u-header .u-menu-2 {
+  margin: -44px 0 0 auto;
+}
+
+.u-header .u-nav-16 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.u-header .u-text-1 {
+  margin: -30px 10px 39px 880px;
 }
 @media (max-width: 1199px) {
    .u-header {
@@ -46529,37 +46542,24 @@ a.u-link.u-text-hover-color-var.hover {
     background-size: cover, cover;
   }
 
-  .u-header .u-menu-1 {
-    width: auto;
+  .u-header .u-text-1 {
+    margin-right: 0;
+    margin-left: 630px;
   }
 }
 @media (max-width: 991px) {
-  .u-header .u-menu-1 {
-    margin-top: 24px;
-  }
-
-  .u-header .u-image-1 {
-    margin-top: -46px;
+  .u-header .u-text-1 {
+    margin-left: 410px;
   }
 }
 @media (max-width: 767px) {
-  .u-header .u-sheet-1 {
-    min-height: 84px;
-  }
-
-  .u-header .u-image-1 {
-    margin-top: -50px;
-    margin-bottom: 14px;
+  .u-header .u-text-1 {
+    margin-left: 230px;
   }
 }
 @media (max-width: 575px) {
-  .u-header .u-menu-1 {
-    margin-top: 26px;
-  }
-
-  .u-header .u-image-1 {
-    margin-top: -46px;
-    margin-bottom: 8px;
+  .u-header .u-text-1 {
+    margin-left: 70px;
   }
 }
  .u-footer {
@@ -46677,6 +46677,21 @@ a.u-link.u-text-hover-color-var.hover {
   }
 }
 
+ /*begin-variables custom-site-css*//* Menu: center group captions in the side menu */
+.u-dropdown-icon .u-nav-container-collapse .u-nav-link:first-child:nth-last-child(2) { justify-content: center; position: relative; }
+.u-dropdown-icon .u-nav-container-collapse .u-nav-link:first-child:nth-last-child(2)::after { position: absolute; right: 0; top: 50%; transform: translateY(-50%); margin-left: 0; }
+/* Menu: center submenu items under their group */
+.u-nav-container-collapse .u-nav-popup { padding-left: 0 !important; }
+.u-nav-container-collapse .u-nav-popup .u-nav-link { text-align: center; font-size: 0.85em; opacity: 0.9; }
+/* Language: show the Korean menu only on Korean pages (a block with class ko-page) */
+body:not(:has(.ko-page)) .u-header .u-menu:has(.menu-ko),
+body:not(:has(.ko-page)) .u-header .u-menu:has(.menu-ko) *,
+body:has(.ko-page) .u-header .u-menu:not(:has(.menu-ko)),
+body:has(.ko-page) .u-header .u-menu:not(:has(.menu-ko)) * { visibility: hidden !important; pointer-events: none !important; }
+/* Language switch: bold the current language (EN is the first link, 한국어 the last) */
+body:not(:has(.ko-page)) .u-header p:has(a + a) a:first-of-type,
+body:has(.ko-page) .u-header p:has(a + a) a:last-of-type { font-weight: 700 !important; }
+/*end-variables custom-site-css*/
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
  /*end-variables base-font-size*/

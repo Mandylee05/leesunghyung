@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="floor response spectrum, FRS, time history analysis, Newmark-beta, Rayleigh damping, peak broadening, RG 1.122, seismic qualification">
+    <meta name="description" content="How floor response spectra are generated from building time history analysis with Newmark-beta integration and 15 % peak broadening, with a worked 3-story building example.">
+    <title>KO Floor Response Spectrum</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="KO-Floor-Response-Spectrum.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 9.0.8, nicepage.com">
+    
+    
+    
+    
+    
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Site1"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="KO Floor Response Spectrum">
+    <meta property="og:description" content="How floor response spectra are generated from building time history analysis with Newmark-beta integration and 15 % peak broadening, with a worked 3-story building example.">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
+          <div class="menu-collapse">
+            <a class="u-button-style u-custom-text-color u-custom-text-hover-color u-hamburger-link u-nav-link" aria-label="Open menu" aria-controls="bb96" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#svg-8176"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="svg-8176" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul role="menubar" class="u-nav u-unstyled"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="./">Home</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="About.html">About</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">Background</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Background menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Seismic-Analysis.html">Seismic Analysis</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Floor-Response-Spectrum.html">Floor Response Spectrum</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">Spectrum Tools</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Spectrum Tools menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Coherence.html">Coherence</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="SRS-Analysis-Transfer.html">SRS Analysis Transfer</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="FFT-Analyzer.html">FFT Analyzer</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="RRS-Verification.html">RRS Verification</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">ANSYS Tools</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="ANSYS Tools menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Ansys-Scripts.html">Ansys Scripts</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="APDL-Seismic-Analysis.html">APDL Seismic Analysis</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Extract-Nodal-Load.html">Extract Nodal Load</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Modal-to-Word.html">Modal to Word</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">Calculation Tools</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Calculation Tools menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Weld-Moment-of-Inertia.html">Weld Moment of Inertia</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="AutoPlot-Excel-to-Word.html">AutoPlot Excel to Word</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="PyMathcad-Worksheet.html">PyMathcad Worksheet</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="MPT-English.html">Modern Portfolio Theory</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="Download.html">Download</a>
+</li></ul>
+          </div>
+          <div id="bb96" role="region" aria-label="Menu panel" class="u-custom-menu u-nav-container-collapse">
+            <div class="u-container-style u-custom-color-1 u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close" tabindex="-1" aria-controls="bb96" aria-label="Close menu"></div>
+                <ul role="menubar" class="u-align-center u-nav u-popupmenu-items u-text-active-custom-color-3 u-text-custom-color-2 u-text-hover-palette-1-base u-unstyled u-nav-6"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="./">Home</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="About.html">About</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">Background</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Background menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Seismic-Analysis.html">Seismic Analysis</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Floor-Response-Spectrum.html">Floor Response Spectrum</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">Spectrum Tools</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Spectrum Tools menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Coherence.html">Coherence</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="SRS-Analysis-Transfer.html">SRS Analysis Transfer</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="FFT-Analyzer.html">FFT Analyzer</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="RRS-Verification.html">RRS Verification</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">ANSYS Tools</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="ANSYS Tools menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Ansys-Scripts.html">Ansys Scripts</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="APDL-Seismic-Analysis.html">APDL Seismic Analysis</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Extract-Nodal-Load.html">Extract Nodal Load</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Modal-to-Word.html">Modal to Word</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">Calculation Tools</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Calculation Tools menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Weld-Moment-of-Inertia.html">Weld Moment of Inertia</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="AutoPlot-Excel-to-Word.html">AutoPlot Excel to Word</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="PyMathcad-Worksheet.html">PyMathcad Worksheet</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="MPT-English.html">Modern Portfolio Theory</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Download.html">Download</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-custom-color-2 u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+          <style class="menu-style">@media (max-width: 1199px) {
+                    [data-responsive-from="LG"] .u-nav-container {
+                        display: none;
+                    }
+                    [data-responsive-from="LG"] .menu-collapse {
+                        display: block;
+                    }
+                }</style>
+        </nav>
+        <img class="u-align-left u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/ae8ee035-170c-245c-ffb7-a8663eb57a17.png" alt="" data-image-width="1024" data-image-height="1024" data-href="./" data-page-id="77279015" title="Home">
+        <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-2" role="navigation" data-responsive-from="XL">
+          <div class="menu-collapse">
+            <a class="u-button-style u-custom-text-color u-custom-text-hover-color u-hamburger-link u-nav-link" aria-label="Open menu" aria-controls="bb96" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#svg-6881"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="svg-6881" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul role="menubar" class="menu-ko u-nav u-unstyled"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="KO-Home.html">홈</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="KO-About.html">소개</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">배경 이론</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="배경 이론 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Seismic-Analysis.html">지진해석</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Floor-Response-Spectrum.html">층응답스펙트럼(FRS)</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">Spectrum 도구</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Spectrum 도구 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Coherence.html">Coherence</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-SRS-Analysis-Transfer.html">SRS 분석</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-FFT-Analyzer.html">FFT 분석기</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-RRS-Verification.html">RRS 검증</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">ANSYS 도구</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="ANSYS 도구 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Ansys-Scripts.html">Ansys Scripts</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-APDL-Seismic-Analysis.html">APDL 지진해석</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Extract-Nodal-Load.html">Nodal Load 추출</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Modal-to-Word.html">Modal 결과 Word 변환</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="#">계산 도구</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="계산 도구 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Weld-Moment-of-Inertia.html">용접부 단면2차모멘트</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-AutoPlot-Excel-to-Word.html">AutoPlot Excel→Word</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-PyMathcad-Worksheet.html">PyMathcad Worksheet</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Modern-Portfolio-Theory.html">현대 포트폴리오 이론</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link u-text-custom-color-1 u-text-hover-custom-color-3" href="KO-Download.html">다운로드</a>
+</li></ul>
+          </div>
+          <div id="bb96" role="region" aria-label="Menu panel" class="u-custom-menu u-nav-container-collapse">
+            <div class="u-container-style u-custom-color-1 u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close" tabindex="-1" aria-controls="bb96" aria-label="Close menu"></div>
+                <ul role="menubar" class="u-align-center u-nav u-popupmenu-items u-text-active-custom-color-3 u-text-custom-color-2 u-text-hover-palette-1-base u-unstyled u-nav-16"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Home.html">홈</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-About.html">소개</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">배경 이론</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="배경 이론 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Seismic-Analysis.html">지진해석</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Floor-Response-Spectrum.html">층응답스펙트럼(FRS)</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">Spectrum 도구</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="Spectrum 도구 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Coherence.html">Coherence</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-SRS-Analysis-Transfer.html">SRS 분석</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-FFT-Analyzer.html">FFT 분석기</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-RRS-Verification.html">RRS 검증</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">ANSYS 도구</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="ANSYS 도구 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Ansys-Scripts.html">Ansys Scripts</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-APDL-Seismic-Analysis.html">APDL 지진해석</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Extract-Nodal-Load.html">Nodal Load 추출</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Modal-to-Word.html">Modal 결과 Word 변환</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="#">계산 도구</a><div class="u-nav-popup"><ul role="menu" class="u-nav u-unstyled" aria-label="계산 도구 menu"><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Weld-Moment-of-Inertia.html">용접부 단면2차모멘트</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-AutoPlot-Excel-to-Word.html">AutoPlot Excel→Word</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-PyMathcad-Worksheet.html">PyMathcad Worksheet</a>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="Modern-Portfolio-Theory.html">현대 포트폴리오 이론</a>
+</li></ul>
+</div>
+</li><li role="none" class="u-nav-item"><a role="menuitem" class="u-button-style u-nav-link" href="KO-Download.html">다운로드</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-custom-color-2 u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+          <style class="menu-style">@media (max-width: 1199px) {
+                    [data-responsive-from="LG"] .u-nav-container {
+                        display: none;
+                    }
+                    [data-responsive-from="LG"] .menu-collapse {
+                        display: block;
+                    }
+                }</style>
+        </nav>
+        <p class="u-text u-text-1">
+          <a href="./" data-page-id="77279015" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base">EN</a> | <a href="KO-Home.html" data-page-id="99432168" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base">한국어</a>
+        </p>
+      </div></header>
+    <section class="ko-page u-align-center u-clearfix u-color-var u-container-align-center u-lightbox u-section-1" id="block-11">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h5 class="u-align-center u-text u-text-default u-text-1">배경</h5>
+        <h2 class="u-align-center u-text u-text-default u-text-2">층응답스펙트럼(FRS)</h2>
+        <p class="u-align-center u-text u-text-3">원자력발전소의 기기는 지반 운동을 직접 받는 것이 아니라, 설치된 층의 움직임을 받습니다.<br>건물이 지진을 걸러내고 증폭시키기 때문에, 층응답스펙트럼(FRS)은 건물의 시간이력해석 결과로 만듭니다.<br>각 층의 절대가속도를 0.5~50 Hz의 단자유도(SDOF) 진동자에 입력하고, 각 진동자의 최대 응답을 모아 원 스펙트럼을 만듭니다.<br>구조물 진동수의 불확실성을 고려하기 위해, RG 1.122에서는 스펙트럼을 평활화하고 피크를 양쪽으로 보통 15 %씩 확장한 뒤 기기의 설계 FRS로 쓰도록 하고 있습니다.
+        </p>
+        <img class="u-image u-image-contain u-image-default u-image-1" src="images/frs_workflow.png" alt="" data-image-width="1783" data-image-height="258">
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-color-var u-container-align-center u-lightbox u-section-2" id="block-12">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h5 class="u-align-center u-text u-text-default u-text-1">이론</h5>
+        <h2 class="u-align-center u-text u-text-default u-text-2">Newmark-β 시간이력해석</h2>
+        <p class="u-align-center u-text u-text-3">건물 응답은 기초 가진을 받는 운동방정식을 직접 적분해서 계산합니다.<br>γ = 1/2, β = 1/4(평균가속도법)의 Newmark-β 방법은 무조건 안정이므로, 시간 간격은 안정성이 아닌 정확도를 기준으로 정합니다.<br>널리 쓰이는 음해법이며, ANSYS Transient Structural 해석에서도 쓸 수 있습니다.<br>감쇠는 Rayleigh Damping C = αM + βK로 모델링하고, 1차와 3차 모드에서 7 %(RG 1.61의 철근콘크리트 구조물 SSE 값)가 되도록 계수를 맞춥니다.<br>시간 간격은 0.001 s로, FRS 상한인 50 Hz를 충분히 표현할 수 있습니다.
+        </p>
+        <img class="u-image u-image-contain u-image-default u-image-1" src="images/frs_formula.png" alt="" data-image-width="1800" data-image-height="930">
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-color-var u-container-align-center u-lightbox u-section-3" id="block-13">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h5 class="u-align-center u-text u-text-default u-text-1">예제문제</h5>
+        <h2 class="u-align-center u-text u-text-default u-text-2">3층 건물 예제</h2>
+        <p class="u-align-center u-text u-text-3">이번 예제에서는 층 질량 800, 800, 600 t, 고유진동수 4.5, 11.1, 16.0 Hz인 3층 전단 건물에 SRS 분석 페이지에서 쓴 합성 지반운동(PGA 0.30 g)을 입력합니다.<br>지붕 최대가속도는 0.53 g로 증폭됩니다.<br>지붕 FRS는 기기 내진검증의 SSE 값인 Damping 3 %로 만들었습니다(OBE는 2 %).<br>건물 진동수 근처에서 뾰족한 피크가 나타나며, 최대값은 4.24 Hz에서 3.45 g로 같은 진동수의 지반 스펙트럼보다 약 7배 큽니다.<br>피크를 양쪽으로 15 %씩 확장하면 3.45 g 구간이 약 3.8~4.8 Hz로 넓어집니다.<br>한마디로, 이 FRS로 설계한 기기는 건물 진동수의 작은 오차에 민감하지 않게 됩니다.
+        </p>
+        <img class="u-image u-image-contain u-image-default u-image-1" src="images/frs_th-1.png" alt="" data-image-width="1600" data-image-height="704">
+        <img class="u-image u-image-contain u-image-default u-image-2" src="images/frs_result-1.png" alt="" data-image-width="1528" data-image-height="735">
+        <a href="KO-SRS-Analysis-Transfer.html" data-page-id="752112285" class="u-active-custom-color-3 u-align-center u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="SRS Analysis Transfer">SRS 분석 도구 사용해 보기</a>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-clearfix u-footer u-gradient u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
+                  <h6 class="u-text u-text-1">Infomation</h6>
+                </div>
+              </div>
+              <div class="u-align-left u-container-align-left u-container-align-right u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-top u-container-layout-2">
+                  <h6 class="u-align-right u-text u-text-2"> mguklee0505@naver.com</h6>
+                  <p class="u-align-right u-small-text u-text u-text-variant u-text-3"> © 2025 by Lee Sung-hyung's website.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></footer>
+  
+</body></html>
