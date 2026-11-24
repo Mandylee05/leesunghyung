@@ -46691,7 +46691,10 @@ body:has(.ko-page) .u-header .u-menu:not(:has(.menu-ko)) * { visibility: hidden 
 /* Language switch: bold the current language (EN is the first link, 한국어 the last) */
 body:not(:has(.ko-page)) .u-header p:has(a + a) a:first-of-type,
 body:has(.ko-page) .u-header p:has(a + a) a:last-of-type { font-weight: 700 !important; }
-/*end-variables custom-site-css*/
+
+/* Language switch: let taps pass through to the hamburger icon under the EN | KO text box */
+.u-header p:has(a + a) { pointer-events: none !important; }
+.u-header p:has(a + a) a { pointer-events: auto !important; }/*end-variables custom-site-css*/
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
  /*end-variables base-font-size*/
