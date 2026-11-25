@@ -27,7 +27,7 @@
     <meta property="og:title" content="KO SRS Analysis Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -201,8 +201,8 @@
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="sec-0901">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">직접적분법 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/example-4.png" alt="" data-image-width="3956" data-image-height="2434">
+        <p class="u-align-center u-text u-text-1">SRS는 고유진동수가 다른 여러 1자유도계에 같은 가속도를 넣었을 때, 각 계의 최대 응답을 모은 곡선입니다.<br>직접적분법은 위의 운동방정식을 시간 영역에서 한 단계씩 적분해서 응답을 구하기 때문에, 원리가 직관적이고 어떤 입력에도 그대로 쓸 수 있습니다.<br>다만, 정확도를 위해 시간 간격을 충분히 작게 잡아야 합니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-6532">
@@ -213,8 +213,8 @@
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">전달함수법 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/example-5.png" alt="" data-image-width="3127" data-image-height="1762">
+        <p class="u-align-center u-text u-text-1">전달함수법은 입력을 FFT로 주파수 영역으로 바꾼 뒤, 1자유도계의 전달함수를 곱하고 다시 역FFT해서 응답을 구합니다.<br>주파수마다 곱셈만 하면 되기 때문에, 많은 진동수를 한꺼번에 계산할 때 빠릅니다.<br>직접적분법과 같은 결과를 다른 경로로 구하는 셈이라서, 두 결과를 비교하면 계산을 서로 검증할 수 있습니다.
+        </p>
         <a href="KO-SRS-Analysis-Transfer.html" data-page-id="752112285" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="SRS Analysis Transfer">SRS 분석 페이지로 돌아가기</a>
       </div>
     </section>

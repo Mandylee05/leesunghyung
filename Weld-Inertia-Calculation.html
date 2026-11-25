@@ -31,7 +31,7 @@
     <meta property="og:title" content="Weld Inertia Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Throat Thickness Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/w_ex_throat.png" alt="" data-image-width="1449" data-image-height="756">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>t</i> : throat thickness<br>&nbsp;&nbsp;<i>s</i> : leg length of the fillet weld<br>&nbsp;&nbsp;<i>I</i>, <i>Z</i> : moment of inertia and section modulus of the weld<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>u</i>
+            </sub>, <i>Z</i>
+            <sub><i>u</i>
+            </sub> : values for the weld treated as a line</span>
+          <br>
+          <br>The strength of a weld is governed not by its leg length but by the thinnest section where failure occurs, the throat.<br>For an equal-leg fillet weld the throat is 0.707 times the leg, and the program first treats the weld as a line with no thickness, then multiplies by the throat to get the actual section properties.<br>This way the same method works for any weld layout.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +284,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Line Properties Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/w_ex_line.png" alt="" data-image-width="1512" data-image-height="661">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>L</i> : total weld length<br>&nbsp;&nbsp;<i>w</i>, <i>d</i> : width and depth of the weld group<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>ux</i>
+            </sub>, <i>I</i>
+            <sub><i>uz</i>
+            </sub> : line moments of inertia about the x and z axes<br>&nbsp;&nbsp;<i>x̄</i> : distance to the centroid</span>
+          <br>
+          <br>When a weld group is treated as lines, the centroid and moment of inertia can be found from the length and position of each weld line alone.<br>A four-sided weld has its centroid at the center, but a three-sided C-shaped weld has it shifted to one side, so the offset must be included with the parallel axis theorem.<br>For this reason the centroid has to be located again whenever the weld shape changes.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +334,23 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Intermittent Weld Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/w_ex_beads.png" alt="" data-image-width="1575" data-image-height="850">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>x</i>
+            <sub>1,<i>i</i>
+            </sub>, <i>x</i>
+            <sub>2,<i>i</i>
+            </sub> : start and end positions of bead i<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>u</i>
+            </sub> : line moment of inertia from the beads<br>&nbsp;&nbsp;<i>η</i> : pitch ratio<br>&nbsp;&nbsp;<i>l</i>, <i>p</i> : bead length and pitch<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>u, int</i>
+            </sub>, <i>I</i>
+            <sub><i>u, cont</i>
+            </sub> : values of the intermittent and continuous weld</span>
+          <br>
+          <br>An intermittent weld is interrupted at a regular pitch, so its section properties are smaller than those of a continuous weld.<br>They can be reduced simply by the pitch ratio (bead length/pitch), but the result depends on where the beads actually are, so the program integrates each bead separately for an exact value.<br>Comparing the two methods shows how conservative the approximation is.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +392,31 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Section Properties Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/w_ex_section.png" alt="" data-image-width="1449" data-image-height="756">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>J</i>
+            <sub><i>uy</i>
+            </sub>, <i>J</i>
+            <sub><i>y</i>
+            </sub> : polar moment of inertia (line and actual)<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>ux</i>
+            </sub>, <i>I</i>
+            <sub><i>uz</i>
+            </sub> : line moments of inertia<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>x</i>
+            </sub>, <i>I</i>
+            <sub><i>z</i>
+            </sub> : moments of inertia<br>&nbsp;&nbsp;<i>Z</i>
+            <sub><i>x</i>
+            </sub>, <i>Z</i>
+            <sub><i>z</i>
+            </sub> : section moduli<br>&nbsp;&nbsp;<i>c</i>
+            <sub><i>x</i>
+            </sub>, <i>c</i>
+            <sub><i>z</i>
+            </sub> : distances from the centroid to the farthest point</span>
+          <br>
+          <br>Section modulus and polar moment of inertia are needed to find the bending and torsional stresses in a weld.<br>The polar moment J is the sum of the moments of inertia about the two axes, and the section modulus is the moment of inertia divided by the distance from the centroid to the farthest point.<br>These values become the input for the weld stress check that follows.
+        </p>
         <a href="Weld-Moment-of-Inertia.html" data-page-id="626700360" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Weld Moment of Inertia">Return to the Weld Moment of Inertia Page</a>
       </div>
     </section>

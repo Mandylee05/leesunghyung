@@ -31,7 +31,7 @@
     <meta property="og:title" content="FFT Analyzer Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -197,7 +197,7 @@
         </p>
       </div></header>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-1" id="sec-c0df">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1">
         <a href="FFT-Analyzer.html" data-page-id="249915627" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="FFT Analyzer">Return to the FFT Analyzer Page</a>
         <h2 class="u-align-center u-text u-text-default u-text-1">1. Sampling Check</h2>
         <div class="custom-expanded u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-layout-horizontal u-list u-list-1">
@@ -234,12 +234,20 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Sampling Check Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_sampling.png" alt="" data-image-width="1701" data-image-height="819">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>dt</i> : time step between samples<br>&nbsp;&nbsp;<i>t</i>
+            <sub>0</sub>, <i>t</i>
+            <sub><i>N</i>−1
+            </sub> : time of the first and last sample<br>&nbsp;&nbsp;<i>N</i> : number of data points<br>&nbsp;&nbsp;<i>F</i>
+            <sub><i>s</i>
+            </sub> : sampling frequency<br>&nbsp;&nbsp;Δ<i>f</i> : frequency resolution<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>Nyq</i>
+            </sub> : Nyquist frequency</span>
+          <br>
+          <br>FFT results depend on the sampling conditions, so the time step (dt) and the number of points (N) are checked first.<br>Components above the Nyquist frequency, half of the sampling frequency Fs = 1/dt, are distorted by aliasing, and the frequency resolution is Fs/N.<br>Since the range of interest in seismic qualification is 0.5–50 Hz, the Nyquist frequency should be well above 50 Hz.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -280,9 +288,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">FFT Calculation Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_fft.png" alt="" data-image-width="1449" data-image-height="882">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>X</i>[<i>k</i>] : FFT result at frequency bin k (complex)<br>&nbsp;&nbsp;<i>x</i>[<i>n</i>] : n-th sample of the time history<br>&nbsp;&nbsp;<i>k</i>, <i>n</i> : frequency bin index and sample index<br>&nbsp;&nbsp;<i>N</i> : number of data points<br>&nbsp;&nbsp;<i>j</i> : imaginary unit<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>k</i>
+            </sub> : frequency of bin k<br>&nbsp;&nbsp;<i>F</i>
+            <sub><i>s</i>
+            </sub> : sampling frequency</span>
+          <br>
+          <br>FFT is a fast way to compute the DFT, which breaks a time history into a sum of sine waves at different frequencies.<br>Each frequency bin corresponds to k·Fs/N, and the result is a complex number holding the magnitude and phase of that component.<br>This step reveals which frequencies are contained in the time signal.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +337,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Amplitude Spectrum Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_amp.png" alt="" data-image-width="1575" data-image-height="819">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>P</i>
+            <sub>2</sub>[<i>k</i>] : two-sided amplitude<br>&nbsp;&nbsp;<i>P</i>
+            <sub>1</sub>[<i>k</i>] : single-sided amplitude<br>&nbsp;&nbsp;|<i>X</i>[<i>k</i>]| : magnitude of the FFT result<br>&nbsp;&nbsp;<i>N</i> : number of data points</span>
+          <br>
+          <br>The FFT magnitude grows with the number of points, so it is divided by N to recover the actual amplitude.<br>For a real signal the positive and negative frequencies are symmetric, so only one side is kept and doubled to get the single-sided amplitude.<br>This lets the spectrum be read in the original acceleration unit (G).
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +387,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Peak Detection Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_peak.png" alt="" data-image-width="1638" data-image-height="756">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>P</i>
+            <sub>1</sub>[<i>k</i>] : single-sided amplitude at bin k<br>&nbsp;&nbsp;<i>h</i> : minimum peak amplitude (0.05 G)<br>&nbsp;&nbsp;<i>k</i>
+            <sub><i>i</i>
+            </sub>, <i>k</i>
+            <sub><i>j</i>
+            </sub> : bin indices of two neighboring peaks<br>&nbsp;&nbsp;Δ<i>f</i> : frequency resolution<br>&nbsp;&nbsp;<i>G</i> : acceleration in units of gravity</span>
+          <br>
+          <br>Frequencies where peaks appear in the spectrum are the dominant frequencies of the structure or the input.<br>The program marks a point as a peak when it is larger than its neighbors and above the minimum amplitude, and keeps a minimum spacing between peaks to filter out small peaks caused by noise.<br>The main frequencies to check in a seismic analysis are picked automatically this way.
+        </p>
         <a href="FFT-Analyzer.html" data-page-id="249915627" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="FFT Analyzer">Return to the FFT Analyzer Page</a>
       </div>
     </section>

@@ -31,7 +31,7 @@
     <meta property="og:title" content="PyMathcad Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Units and Evaluation Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/c_ex_units.png" alt="" data-image-width="1701" data-image-height="592">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="sec-0901">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;:= : definition<br>&nbsp;&nbsp;= : evaluation (shows the result)<br>&nbsp;&nbsp;≡ : global definition<br>&nbsp;&nbsp;<i>E</i> : elastic modulus (example of a global definition)<br>&nbsp;&nbsp;<i>g</i> : acceleration of gravity</span>
+          <br>
+          <br>The most common mistake in hand calculations is unit conversion.<br>The program defines every value with a unit and converts automatically during calculation, so the result stays correct even when kN and N or mm and m are mixed.<br>Since equations and units are shown together as in Mathcad, the sheet is also easy to review.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +280,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Functions and Logic Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/c_ex_func.png" alt="" data-image-width="1600" data-image-height="718">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>f</i>(<i>x</i>, <i>y</i>) : user-defined function<br>&nbsp;&nbsp;SRSS(<i>a</i>, <i>b</i>, <i>c</i>) : square root of the sum of squares<br>&nbsp;&nbsp;if(cond, <i>a</i>, <i>b</i>) : returns a when cond is true, otherwise b<br>&nbsp;&nbsp;IR : interaction ratio<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>t</i>
+            </sub>, <i>F</i>
+            <sub><i>t</i>
+            </sub> : tensile stress and allowable tensile stress<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>v</i>
+            </sub>, <i>F</i>
+            <sub><i>v</i>
+            </sub> : shear stress and allowable shear stress</span>
+          <br>
+          <br>When the same check is repeated for several members, defining the equation as a Function is convenient.<br>The program supports user Functions and conditions such as if(), so the judgment against the allowable value (O.K/N.G) is shown automatically.<br>The acceptance criteria thus stay visible in the calculation itself.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +334,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Arrays and Sums Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/c_ex_array.png" alt="" data-image-width="1348" data-image-height="856">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<b>T</b> : vector of values<br>&nbsp;&nbsp;<i>T</i>
+            <sub><i>k</i>
+            </sub> = <b>T</b>[<i>k</i>] : k-th element of T<br>&nbsp;&nbsp;ORIGIN : index of the first element<br>&nbsp;&nbsp;sum(expr, <i>i</i>, <i>a</i>, <i>b</i>) : sum of expr for i from a to b</span>
+          <br>
+          <br>When there are many values of the same kind, such as bolts or nodes, they are handled together as a Vector.<br>Each value is taken out by its index and all can be added at once with the summation sign, so table calculations can be written as equations.<br>The calculation is left as reviewable equations instead of an Excel table.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +384,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Worksheet and PDF Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/c_ex_pdf.png" alt="" data-image-width="1260" data-image-height="1020">
+        <p class="u-align-center u-text u-text-1">A calculation report needs a clear top-to-bottom order of calculation.<br>The program places equations and text on a page grid, calculates in the order they are defined, and outputs an A4 PDF.<br>A report ready for submission can be produced directly.
+        </p>
         <a href="PyMathcad-Worksheet.html" data-page-id="32212882" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="PyMathcad Worksheet">Return to the PyMathcad Worksheet Page</a>
       </div>
     </section>

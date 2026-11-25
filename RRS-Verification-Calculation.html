@@ -31,7 +31,7 @@
     <meta property="og:title" content="RRS Verification Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Direction Recognition Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/r_ex_ocr.png" alt="" data-image-width="1449" data-image-height="661">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;E−W, N−S : horizontal direction labels<br>&nbsp;&nbsp;V−S, V−W : vertical direction labels<br>&nbsp;&nbsp;H, V : horizontal and vertical<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>votes</i>
+            </sub> : number of OCR readings that agree</span>
+          <br>
+          <br>RRS and FRS differ between the horizontal and vertical directions, so the direction of each graph must be known before comparing.<br>The program reads the Direction label below the graph with OCR and classifies it as horizontal (H) or vertical (V), setting it automatically only when two readings agree.<br>Otherwise the user chooses the direction, which prevents comparing the wrong curves.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +282,27 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Grid Detection Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/r_ex_grid.png" alt="" data-image-width="1449" data-image-height="819">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>B</i>(<i>x</i>, <i>y</i>) : dark-pixel map (1 = dark)<br>&nbsp;&nbsp;<i>I</i>(<i>x</i>, <i>y</i>) : pixel brightness (0–255)<br>&nbsp;&nbsp;<i>L</i>
+            <sub><i>h</i>
+            </sub>, <i>L</i>
+            <sub><i>v</i>
+            </sub> : lengths of horizontal and vertical lines<br>&nbsp;&nbsp;<i>W</i>, <i>H</i> : image width and height<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>lines</i>
+            </sub> : number of grid lines with the same start and end<br>&nbsp;&nbsp;<i>x</i>
+            <sub><i>L</i>
+            </sub>, <i>x</i>
+            <sub><i>R</i>
+            </sub>, <i>y</i>
+            <sub><i>T</i>
+            </sub>, <i>y</i>
+            <sub><i>B</i>
+            </sub> : left, right, top and bottom edges of the plot</span>
+          <br>
+          <br>A graph image only has pixel coordinates, so the location of the real axes in the image has to be found first.<br>The program extracts long horizontal and vertical lines of dark pixels as grid lines and uses lines that repeat at the same position to set the plot boundary.<br>This creates the link between image coordinates and graph coordinates.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +342,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Log Mapping Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/r_ex_map.png" alt="" data-image-width="1512" data-image-height="743">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>x</i>, <i>y</i> : pixel position of a point<br>&nbsp;&nbsp;<i>f</i> : frequency [Hz]<br>&nbsp;&nbsp;<i>a</i> : acceleration [g]<br>&nbsp;&nbsp;<i>x</i>
+            <sub><i>L</i>
+            </sub>, <i>x</i>
+            <sub><i>R</i>
+            </sub>, <i>y</i>
+            <sub><i>T</i>
+            </sub>, <i>y</i>
+            <sub><i>B</i>
+            </sub> : pixel edges of the plot area<br>&nbsp;&nbsp;0.5, 50 : limits of the frequency axis [Hz]<br>&nbsp;&nbsp;0.05, 35 : limits of the acceleration axis [g]</span>
+          <br>
+          <br>FRS graphs usually use log scales for both frequency and acceleration, so a simple linear proportion of pixel positions gives wrong values.<br>The program uses the pixel positions of the plot boundary and the axis values to interpolate linearly on the log axes.<br>Only then can the RRS points be drawn accurately in the same coordinate system as the FRS.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +398,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Overlay Check Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/r_ex_check.png" alt="" data-image-width="1575" data-image-height="661">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;RRS(<i>f</i>) : required response spectrum of the test<br>&nbsp;&nbsp;FRS(<i>f</i>) : floor response spectrum<br>&nbsp;&nbsp;Margin(<i>f</i>) : margin ratio at frequency f<br>&nbsp;&nbsp;<i>f</i> : frequency [Hz]</span>
+          <br>
+          <br>In equipment qualification testing, the RRS must envelop the FRS over the whole frequency range of interest (0.5–50 Hz).<br>The program calculates the RRS/FRS ratio at each frequency as the margin and marks the ranges below 1.<br>Whether the test input satisfies the required spectrum can then be seen at a glance.
+        </p>
         <a href="RRS-Verification.html" data-page-id="905304072" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="RRS Verification">Return to the RRS Verification Page</a>
       </div>
     </section>

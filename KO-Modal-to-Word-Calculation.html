@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO Modal to Word Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,18 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">텍스트 읽기 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/m_ex_parse.png" alt="" data-image-width="1398" data-image-height="1008">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;block(<i>d</i>) : d 방향의 텍스트 Block<br>&nbsp;&nbsp;<i>d</i> : 가진 방향(X, Y, Z)<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>fields</i>
+            </sub> : 한 행의 필드 수<br>&nbsp;&nbsp;<i>t</i>
+            <sub>0</sub> … <i>t</i>
+            <sub>7</sub> : Mode 행의 각 필드<br>&nbsp;&nbsp;<i>n</i>, <i>f</i>, ratio, <i>M</i>
+            <sub><i>e</i>
+            </sub>, % : 모드 번호, 진동수, 비율, 유효질량, 질량 백분율</span>
+          <br>
+          <br>ANSYS의 Participation Factor 출력은 방향마다 별도의 Block으로 나뉘어 있고, 각 행에 모드 번호와 진동수, 유효질량 등이 들어 있습니다.<br>프로그램은 방향 Block을 구분한 뒤 Mode 행만 읽어서 표 형태로 정리합니다.<br>이렇게 해야 방향별로 같은 모드의 값을 나란히 비교할 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +285,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">지배 모드 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/m_ex_target.png" alt="" data-image-width="1701" data-image-height="655">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>k</i>
+            <sup>*</sup>
+            <sub><i>d</i>
+            </sub> : d 방향의 지배 모드<br>&nbsp;&nbsp;RATIO<sub><i>k, d</i>
+            </sub> : d 방향 k번째 모드의 참여 비율<br>&nbsp;&nbsp;Γ<sub><i>k, d</i>
+            </sub> : d 방향 k번째 모드의 Participation Factor<br>&nbsp;&nbsp;<i>M</i>
+            <sub><i>e, k</i>
+            </sub> : k번째 모드의 유효질량<br>&nbsp;&nbsp;Σ<i>M</i>
+            <sub><i>e</i>
+            </sub>, Σ% : 유효질량 합계와 누적 질량 비율</span>
+          <br>
+          <br>방향마다 유효질량이 가장 큰 모드가 그 방향의 지진 응답을 지배합니다.<br>프로그램은 Ratio(유효질량 비율)가 최대인 모드를 지배 모드로 표시하고, 합계 행으로 누적 유효질량이 충분한지도 확인합니다.<br>내진해석에서는 보통 누적 유효질량이 90 % 이상이 되도록 모드를 포함합니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +339,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">모드 선택 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/m_ex_modes.png" alt="" data-image-width="1953" data-image-height="655">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>S</i> : 표에 넣는 모드 집합<br>&nbsp;&nbsp;<i>k</i>
+            <sup>*</sup>
+            <sub><i>X</i>
+            </sub>, <i>k</i>
+            <sup>*</sup>
+            <sub><i>Y</i>
+            </sub>, <i>k</i>
+            <sup>*</sup>
+            <sub><i>Z</i>
+            </sub> : 방향별 지배 모드<br>&nbsp;&nbsp;<i>N</i> : 전체 모드 수<br>&nbsp;&nbsp;<i>ℛ</i> : 범위 옵션(없음, 1–6, 1–10, 전체)</span>
+          <br>
+          <br>계산서에 모든 모드를 넣으면 표가 너무 길어지기 때문에, 의미 있는 모드만 골라야 합니다.<br>프로그램은 앞쪽 모드들과 방향별 지배 모드를 기본으로 넣고, 범위 옵션으로 개수를 조정할 수 있게 합니다.<br>그래서 검토자가 꼭 봐야 하는 모드는 빠지지 않습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +395,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Word 표 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/m_ex_word.png" alt="" data-image-width="1701" data-image-height="630">
+        <p class="u-align-center u-text u-text-1">계산서의 표는 형식이 일정해야 검토하기 쉽습니다.<br>프로그램은 진동수와 방향별 Ratio, 유효질량 열을 정해진 순서로 만들고, 지배 모드는 굵게 표시하고 숫자는 같은 자릿수로 맞춥니다.<br>이렇게 하면 해석 결과가 바뀌어도 같은 양식의 표를 바로 다시 만들 수 있습니다.
+        </p>
         <a href="KO-Modal-to-Word.html" data-page-id="581915024" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Modal to Word">Modal 결과 Word 변환 페이지로 돌아가기</a>
       </div>
     </section>

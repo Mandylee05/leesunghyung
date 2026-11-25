@@ -46694,7 +46694,90 @@ body:has(.ko-page) .u-header p:has(a + a) a:last-of-type { font-weight: 700 !imp
 
 /* Language switch: let taps pass through to the hamburger icon under the EN | KO text box */
 .u-header p:has(a + a) { pointer-events: none !important; }
-.u-header p:has(a + a) a { pointer-events: auto !important; }/*end-variables custom-site-css*/
+.u-header p:has(a + a) a { pointer-events: auto !important; }
+/* Korean pages: wrap lines between words, not inside words */
+body:has(.ko-page) .u-body p, body:has(.ko-page) p { word-break: keep-all; }
+/* Formula images: same symbol size on every page and screen */
+:root{--eqs:.40}
+@media (max-width:1199px){:root{--eqs:.34}}
+@media (max-width:991px){:root{--eqs:.40}}
+@media (max-width:575px){:root{--eqs:.27}}
+img[src*="036bf31f-444d-e3a1-da2b-a645a3ce8ec2.png"]{width:calc(939px*var(--eqs))!important}
+img[src*="2c2b1e67-7b80-c24a-324f-a0dee9d36a44.png"]{width:calc(788px*var(--eqs))!important}
+img[src*="CSD-1.png"]{width:calc(846px*var(--eqs))!important}
+img[src*="Calculate_rotation.png"]{width:calc(770px*var(--eqs))!important}
+img[src*="CrossSpectral.png"]{width:calc(1340px*var(--eqs))!important}
+img[src*="PSD-1.png"]{width:calc(603px*var(--eqs))!important}
+img[src*="PowerSpectral.png"]{width:calc(868px*var(--eqs))!important}
+img[src*="a_eq_comb1.png"]{width:calc(543px*var(--eqs))!important}
+img[src*="a_eq_comb2.png"]{width:calc(535px*var(--eqs))!important}
+img[src*="a_eq_modal1.png"]{width:calc(429px*var(--eqs))!important}
+img[src*="a_eq_modal2.png"]{width:calc(514px*var(--eqs))!important}
+img[src*="a_eq_model1.png"]{width:calc(636px*var(--eqs))!important}
+img[src*="a_eq_model2.png"]{width:calc(650px*var(--eqs))!important}
+img[src*="a_eq_rs1.png"]{width:calc(574px*var(--eqs))!important}
+img[src*="a_eq_rs2.png"]{width:calc(615px*var(--eqs))!important}
+img[src*="c_eq_array1.png"]{width:calc(1126px*var(--eqs))!important}
+img[src*="c_eq_array2.png"]{width:calc(899px*var(--eqs))!important}
+img[src*="c_eq_func1.png"]{width:calc(1142px*var(--eqs))!important}
+img[src*="c_eq_func2.png"]{width:calc(861px*var(--eqs))!important}
+img[src*="c_eq_pdf1.png"]{width:calc(1199px*var(--eqs))!important}
+img[src*="c_eq_pdf2.png"]{width:calc(999px*var(--eqs))!important}
+img[src*="c_eq_units1.png"]{width:calc(1295px*var(--eqs))!important}
+img[src*="c_eq_units2.png"]{width:calc(974px*var(--eqs))!important}
+img[src*="calculation_1.png"]{width:calc(1062px*var(--eqs))!important}
+img[src*="calculation_2.png"]{width:calc(1834px*var(--eqs))!important}
+img[src*="e_eq_excel1.png"]{width:calc(752px*var(--eqs))!important}
+img[src*="e_eq_excel2.png"]{width:calc(850px*var(--eqs))!important}
+img[src*="e_eq_node1.png"]{width:calc(744px*var(--eqs))!important}
+img[src*="e_eq_node2.png"]{width:calc(700px*var(--eqs))!important}
+img[src*="e_eq_read1.png"]{width:calc(929px*var(--eqs))!important}
+img[src*="e_eq_read2.png"]{width:calc(909px*var(--eqs))!important}
+img[src*="e_eq_total1.png"]{width:calc(810px*var(--eqs))!important}
+img[src*="e_eq_total2.png"]{width:calc(864px*var(--eqs))!important}
+img[src*="fft_eq_amp1.png"]{width:calc(370px*var(--eqs))!important}
+img[src*="fft_eq_amp2.png"]{width:calc(640px*var(--eqs))!important}
+img[src*="fft_eq_fft1.png"]{width:calc(551px*var(--eqs))!important}
+img[src*="fft_eq_fft2.png"]{width:calc(379px*var(--eqs))!important}
+img[src*="fft_eq_peak1.png"]{width:calc(478px*var(--eqs))!important}
+img[src*="fft_eq_peak2.png"]{width:calc(409px*var(--eqs))!important}
+img[src*="fft_eq_sampling1.png"]{width:calc(377px*var(--eqs))!important}
+img[src*="fft_eq_sampling2.png"]{width:calc(249px*var(--eqs))!important}
+img[src*="m_eq_modes1.png"]{width:calc(680px*var(--eqs))!important}
+img[src*="m_eq_modes2.png"]{width:calc(995px*var(--eqs))!important}
+img[src*="m_eq_parse1.png"]{width:calc(1417px*var(--eqs))!important}
+img[src*="m_eq_parse2.png"]{width:calc(957px*var(--eqs))!important}
+img[src*="m_eq_target1.png"]{width:calc(986px*var(--eqs))!important}
+img[src*="m_eq_target2.png"]{width:calc(1277px*var(--eqs))!important}
+img[src*="m_eq_word1.png"]{width:calc(1071px*var(--eqs))!important}
+img[src*="m_eq_word2.png"]{width:calc(1002px*var(--eqs))!important}
+img[src*="p_eq_check1.png"]{width:calc(630px*var(--eqs))!important}
+img[src*="p_eq_check2.png"]{width:calc(830px*var(--eqs))!important}
+img[src*="p_eq_iers1.png"]{width:calc(603px*var(--eqs))!important}
+img[src*="p_eq_iers2.png"]{width:calc(500px*var(--eqs))!important}
+img[src*="p_eq_new1.png"]{width:calc(473px*var(--eqs))!important}
+img[src*="p_eq_new2.png"]{width:calc(749px*var(--eqs))!important}
+img[src*="p_eq_test1.png"]{width:calc(695px*var(--eqs))!important}
+img[src*="p_eq_test2.png"]{width:calc(698px*var(--eqs))!important}
+img[src*="r_eq_check1.png"]{width:calc(408px*var(--eqs))!important}
+img[src*="r_eq_check2.png"]{width:calc(529px*var(--eqs))!important}
+img[src*="r_eq_grid1.png"]{width:calc(578px*var(--eqs))!important}
+img[src*="r_eq_grid2.png"]{width:calc(539px*var(--eqs))!important}
+img[src*="r_eq_map1.png"]{width:calc(646px*var(--eqs))!important}
+img[src*="r_eq_map2.png"]{width:calc(670px*var(--eqs))!important}
+img[src*="r_eq_ocr1.png"]{width:calc(507px*var(--eqs))!important}
+img[src*="r_eq_ocr2.png"]{width:calc(556px*var(--eqs))!important}
+img[src*="toFreq.png"]{width:calc(692px*var(--eqs))!important}
+img[src*="w_eq_beads1.png"]{width:calc(439px*var(--eqs))!important}
+img[src*="w_eq_beads2.png"]{width:calc(364px*var(--eqs))!important}
+img[src*="w_eq_line1.png"]{width:calc(370px*var(--eqs))!important}
+img[src*="w_eq_line2.png"]{width:calc(456px*var(--eqs))!important}
+img[src*="w_eq_section1.png"]{width:calc(315px*var(--eqs))!important}
+img[src*="w_eq_section2.png"]{width:calc(532px*var(--eqs))!important}
+img[src*="w_eq_throat1.png"]{width:calc(557px*var(--eqs))!important}
+img[src*="w_eq_throat2.png"]{width:calc(232px*var(--eqs))!important}
+img[src*="_eq_"],img[src*="036bf31f-444d-e3a1-da2b-a645a3ce8ec2.png"],img[src*="2c2b1e67-7b80-c24a-324f-a0dee9d36a44.png"],img[src*="CSD-1.png"],img[src*="Calculate_rotation.png"],img[src*="CrossSpectral.png"],img[src*="PSD-1.png"],img[src*="PowerSpectral.png"],img[src*="calculation_1.png"],img[src*="calculation_2.png"],img[src*="toFreq.png"]{height:auto!important;max-width:100%;object-fit:contain;position:relative;left:50%;transform:translateX(-50%)}
+.u-repeater:has(img[src*="_eq_"]),.u-sheet:has(img[src*="_eq_"]),.u-repeater:has(img[src*="036bf31f-444d-e3a1-da2b-a645a3ce8ec2.png"]),.u-sheet:has(img[src*="036bf31f-444d-e3a1-da2b-a645a3ce8ec2.png"]),.u-repeater:has(img[src*="2c2b1e67-7b80-c24a-324f-a0dee9d36a44.png"]),.u-sheet:has(img[src*="2c2b1e67-7b80-c24a-324f-a0dee9d36a44.png"]),.u-repeater:has(img[src*="CSD-1.png"]),.u-sheet:has(img[src*="CSD-1.png"]),.u-repeater:has(img[src*="Calculate_rotation.png"]),.u-sheet:has(img[src*="Calculate_rotation.png"]),.u-repeater:has(img[src*="CrossSpectral.png"]),.u-sheet:has(img[src*="CrossSpectral.png"]),.u-repeater:has(img[src*="PSD-1.png"]),.u-sheet:has(img[src*="PSD-1.png"]),.u-repeater:has(img[src*="PowerSpectral.png"]),.u-sheet:has(img[src*="PowerSpectral.png"]),.u-repeater:has(img[src*="calculation_1.png"]),.u-sheet:has(img[src*="calculation_1.png"]),.u-repeater:has(img[src*="calculation_2.png"]),.u-sheet:has(img[src*="calculation_2.png"]),.u-repeater:has(img[src*="toFreq.png"]),.u-sheet:has(img[src*="toFreq.png"]){min-height:0!important}/*end-variables custom-site-css*/
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
  /*end-variables base-font-size*/

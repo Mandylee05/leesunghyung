@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO PyMathcad Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,12 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Unit과 계산 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/c_ex_units.png" alt="" data-image-width="1701" data-image-height="592">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;:= : 정의<br>&nbsp;&nbsp;= : 계산(결과 표시)<br>&nbsp;&nbsp;≡ : 전역 정의<br>&nbsp;&nbsp;<i>E</i> : 탄성계수(전역 정의 예)<br>&nbsp;&nbsp;<i>g</i> : 중력가속도</span>
+          <br>
+          <br>손 계산서에서 가장 흔한 실수는 단위 변환입니다.<br>프로그램은 값마다 Unit을 붙여 정의하고 계산할 때 자동으로 환산하므로, kN과 N, mm와 m가 섞여도 결과가 맞습니다.<br>Mathcad처럼 식과 단위를 함께 보여 주기 때문에 검토하기도 쉽습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +279,20 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Function과 논리 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/c_ex_func.png" alt="" data-image-width="1600" data-image-height="718">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>f</i>(<i>x</i>, <i>y</i>) : 사용자 Function<br>&nbsp;&nbsp;SRSS(<i>a</i>, <i>b</i>, <i>c</i>) : 제곱합의 제곱근<br>&nbsp;&nbsp;if(cond, <i>a</i>, <i>b</i>) : 조건이 참이면 a, 아니면 b<br>&nbsp;&nbsp;IR : 조합 응력비<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>t</i>
+            </sub>, <i>F</i>
+            <sub><i>t</i>
+            </sub> : 인장응력과 허용 인장응력<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>v</i>
+            </sub>, <i>F</i>
+            <sub><i>v</i>
+            </sub> : 전단응력과 허용 전단응력</span>
+          <br>
+          <br>같은 검토를 여러 부재에 반복할 때는 식을 Function으로 정의하면 편리합니다.<br>프로그램은 사용자 Function과 if() 같은 조건식을 지원해서, 허용값과 비교한 판정(O.K/N.G)을 자동으로 표시합니다.<br>이렇게 하면 판정 기준이 계산서 안에 그대로 드러납니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +332,14 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Array와 합계 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/c_ex_array.png" alt="" data-image-width="1348" data-image-height="856">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<b>T</b> : 값을 묶은 Vector<br>&nbsp;&nbsp;<i>T</i>
+            <sub><i>k</i>
+            </sub> = <b>T</b>[<i>k</i>] : T의 k번째 값<br>&nbsp;&nbsp;ORIGIN : 첫 번째 Index 번호<br>&nbsp;&nbsp;sum(expr, <i>i</i>, <i>a</i>, <i>b</i>) : i = a부터 b까지 expr의 합</span>
+          <br>
+          <br>Bolt나 Node처럼 같은 종류의 값이 여러 개일 때는 Vector로 묶어서 다룹니다.<br>Index로 각 값을 꺼내 쓰고 합계 기호로 한 번에 더할 수 있기 때문에, 표 계산을 식으로 나타낼 수 있습니다.<br>그래서 Excel 표 대신 검토할 수 있는 식으로 계산을 남길 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +381,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Worksheet와 PDF (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/c_ex_pdf.png" alt="" data-image-width="1260" data-image-height="1020">
+        <p class="u-align-center u-text u-text-1">계산서는 위에서 아래로 계산 순서가 분명해야 합니다.<br>프로그램은 페이지 격자에 맞춰 식과 설명을 배치하고, 정의된 순서대로 계산한 뒤 A4 PDF로 출력합니다.<br>덕분에 제출용 계산서를 바로 만들 수 있습니다.
+        </p>
         <a href="KO-PyMathcad-Worksheet.html" data-page-id="39066932" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="PyMathcad Worksheet">PyMathcad Worksheet 페이지로 돌아가기</a>
       </div>
     </section>

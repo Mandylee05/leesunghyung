@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO Weld Inertia Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">목두께 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/w_ex_throat.png" alt="" data-image-width="1449" data-image-height="756">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>t</i> : 목두께<br>&nbsp;&nbsp;<i>s</i> : 필릿 용접의 다리 길이<br>&nbsp;&nbsp;<i>I</i>, <i>Z</i> : 용접부의 단면2차모멘트와 단면계수<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>u</i>
+            </sub>, <i>Z</i>
+            <sub><i>u</i>
+            </sub> : 용접을 선으로 본 값</span>
+          <br>
+          <br>용접부의 강도는 다리 길이가 아니라 파단이 일어나는 가장 얇은 단면, 즉 목두께로 정해집니다.<br>등각 필릿 용접의 목두께는 다리 길이의 0.707배이고, 프로그램은 용접을 두께가 없는 선으로 계산한 뒤 이 목두께를 곱해서 실제 단면 특성으로 바꿉니다.<br>이렇게 하면 용접 배치가 바뀌어도 같은 방법으로 계산할 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +283,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">선 특성 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/w_ex_line.png" alt="" data-image-width="1512" data-image-height="661">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>L</i> : 용접 전체 길이<br>&nbsp;&nbsp;<i>w</i>, <i>d</i> : 용접군의 너비와 깊이<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>ux</i>
+            </sub>, <i>I</i>
+            <sub><i>uz</i>
+            </sub> : x축·z축에 대한 선 단면2차모멘트<br>&nbsp;&nbsp;<i>x̄</i> : 도심까지의 거리</span>
+          <br>
+          <br>용접군을 선으로 보면, 각 용접선의 길이와 위치만으로 도심과 단면2차모멘트를 구할 수 있습니다.<br>4면 용접은 도심이 가운데에 있지만, C자형 3면 용접은 도심이 한쪽으로 치우치기 때문에 평행축 정리로 이동량을 반영해야 합니다.<br>그래서 용접 형상이 바뀌면 도심 위치부터 다시 잡는 것이 중요합니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +332,22 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">단속 용접 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/w_ex_beads.png" alt="" data-image-width="1575" data-image-height="850">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>x</i>
+            <sub>1,<i>i</i>
+            </sub>, <i>x</i>
+            <sub>2,<i>i</i>
+            </sub> : i번째 비드의 시작·끝 위치<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>u</i>
+            </sub> : 비드로 구한 선 단면2차모멘트<br>&nbsp;&nbsp;<i>η</i> : 피치 비율<br>&nbsp;&nbsp;<i>l</i>, <i>p</i> : 비드 길이와 피치<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>u, int</i>
+            </sub>, <i>I</i>
+            <sub><i>u, cont</i>
+            </sub> : 단속 용접과 연속 용접의 값</span>
+          <br>
+          <br>단속 용접은 비드가 일정한 피치로 끊어져 있기 때문에, 연속 용접보다 단면 특성이 작습니다.<br>피치 비율(비드 길이/피치)을 곱해 간단히 줄일 수도 있지만, 비드의 실제 위치에 따라 결과가 달라지므로 프로그램은 비드마다 따로 적분해서 정밀하게 계산합니다.<br>두 방법을 비교하면 근사 계산이 얼마나 보수적인지 알 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +389,30 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">단면 특성 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/w_ex_section.png" alt="" data-image-width="1449" data-image-height="756">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>J</i>
+            <sub><i>uy</i>
+            </sub>, <i>J</i>
+            <sub><i>y</i>
+            </sub> : 극관성모멘트(선, 실제)<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>ux</i>
+            </sub>, <i>I</i>
+            <sub><i>uz</i>
+            </sub> : 선 단면2차모멘트<br>&nbsp;&nbsp;<i>I</i>
+            <sub><i>x</i>
+            </sub>, <i>I</i>
+            <sub><i>z</i>
+            </sub> : 단면2차모멘트<br>&nbsp;&nbsp;<i>Z</i>
+            <sub><i>x</i>
+            </sub>, <i>Z</i>
+            <sub><i>z</i>
+            </sub> : 단면계수<br>&nbsp;&nbsp;<i>c</i>
+            <sub><i>x</i>
+            </sub>, <i>c</i>
+            <sub><i>z</i>
+            </sub> : 도심에서 가장 먼 점까지의 거리</span>
+          <br>
+          <br>용접부에 생기는 굽힘 응력과 비틀림 응력을 구하려면 단면계수와 극관성모멘트가 필요합니다.<br>극관성모멘트 J는 두 축의 단면2차모멘트를 더한 값이고, 단면계수는 단면2차모멘트를 도심에서 가장 먼 점까지의 거리로 나눈 값입니다.<br>이 값들이 이후 용접부 응력 검토의 입력이 됩니다.
+        </p>
         <a href="KO-Weld-Moment-of-Inertia.html" data-page-id="163706495" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Weld Moment of Inertia">용접부 단면2차모멘트 페이지로 돌아가기</a>
       </div>
     </section>

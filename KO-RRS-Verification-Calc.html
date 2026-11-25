@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO RRS Verification Calc">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -236,10 +236,12 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">방향 인식 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/r_ex_ocr.png" alt="" data-image-width="1449" data-image-height="661">
-        </div>
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;E−W, N−S : 수평 방향 표기<br>&nbsp;&nbsp;V−S, V−W : 수직 방향 표기<br>&nbsp;&nbsp;H, V : 수평과 수직<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>votes</i>
+            </sub> : 일치한 OCR 판독 횟수</span>
+          <br>
+          <br>RRS와 FRS는 수평·수직 방향마다 값이 다르기 때문에, 비교하기 전에 그래프가 어느 방향인지 먼저 알아야 합니다.<br>프로그램은 그래프 아래쪽의 Direction 표기를 OCR로 읽어 수평(H) 또는 수직(V)으로 분류하고, 두 번 읽은 결과가 일치할 때만 자동으로 정합니다.<br>그렇지 않으면 사용자가 직접 고르게 해서, 방향이 잘못 비교되는 일을 막습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -280,9 +282,25 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">격자 인식 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/r_ex_grid.png" alt="" data-image-width="1449" data-image-height="819">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>B</i>(<i>x</i>, <i>y</i>) : 어두운 픽셀 표시(1 = 어두움)<br>&nbsp;&nbsp;<i>I</i>(<i>x</i>, <i>y</i>) : 픽셀 밝기(0–255)<br>&nbsp;&nbsp;<i>L</i>
+            <sub><i>h</i>
+            </sub>, <i>L</i>
+            <sub><i>v</i>
+            </sub> : 가로선·세로선의 길이<br>&nbsp;&nbsp;<i>W</i>, <i>H</i> : 이미지 너비와 높이<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>lines</i>
+            </sub> : 시작·끝이 같은 격자선 수<br>&nbsp;&nbsp;<i>x</i>
+            <sub><i>L</i>
+            </sub>, <i>x</i>
+            <sub><i>R</i>
+            </sub>, <i>y</i>
+            <sub><i>T</i>
+            </sub>, <i>y</i>
+            <sub><i>B</i>
+            </sub> : 그래프 영역의 왼쪽·오른쪽·위·아래 경계</span>
+          <br>
+          <br>그래프 이미지는 픽셀 좌표만 가지고 있기 때문에, 우선 실제 축이 이미지의 어디에 있는지 찾아야 합니다.<br>프로그램은 어두운 픽셀로 이루어진 긴 가로·세로 선을 격자선으로 추출하고, 같은 위치에서 반복되는 선으로 그래프 영역의 경계를 정합니다.<br>한마디로, 이미지 좌표와 그래프 좌표를 이어 주는 기준을 만드는 단계라는 뜻입니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -323,9 +341,19 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Log 변환 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/r_ex_map.png" alt="" data-image-width="1512" data-image-height="743">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>x</i>, <i>y</i> : 점의 픽셀 위치<br>&nbsp;&nbsp;<i>f</i> : 진동수 [Hz]<br>&nbsp;&nbsp;<i>a</i> : 가속도 [g]<br>&nbsp;&nbsp;<i>x</i>
+            <sub><i>L</i>
+            </sub>, <i>x</i>
+            <sub><i>R</i>
+            </sub>, <i>y</i>
+            <sub><i>T</i>
+            </sub>, <i>y</i>
+            <sub><i>B</i>
+            </sub> : 그래프 영역의 픽셀 경계<br>&nbsp;&nbsp;0.5, 50 : 진동수 축의 범위 [Hz]<br>&nbsp;&nbsp;0.05, 35 : 가속도 축의 범위 [g]</span>
+          <br>
+          <br>FRS 그래프는 보통 진동수와 가속도 축이 모두 Log Scale이기 때문에, 픽셀 위치를 단순 비례식으로 바꾸면 틀린 값이 나옵니다.<br>그래서 위의 식처럼 그래프 경계의 픽셀 위치와 축 값을 이용해 Log 축 위에서 선형 보간을 합니다.<br>이렇게 해야 RRS 점을 FRS와 같은 좌표계에 정확하게 그릴 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +395,10 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">겹침 확인 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/r_ex_check.png" alt="" data-image-width="1575" data-image-height="661">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;RRS(<i>f</i>) : 시험의 요구 응답 Spectrum<br>&nbsp;&nbsp;FRS(<i>f</i>) : 층 응답 Spectrum<br>&nbsp;&nbsp;Margin(<i>f</i>) : 진동수 f에서의 여유율<br>&nbsp;&nbsp;<i>f</i> : 진동수 [Hz]</span>
+          <br>
+          <br>기기 검증 시험에서는 RRS가 관심 진동수 범위(0.5~50 Hz) 전체에서 FRS를 포락해야 합니다.<br>프로그램은 각 진동수에서 RRS/FRS 비율을 여유율로 계산하고, 1보다 작은 구간을 찾아 표시합니다.<br>그 구간이 없으면 시험 입력이 요구 Spectrum을 만족한다고 볼 수 있습니다.
+        </p>
         <a href="KO-RRS-Verification.html" data-page-id="608306924" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="RRS Verification">RRS 검증 페이지로 돌아가기</a>
       </div>
     </section>

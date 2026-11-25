@@ -31,7 +31,7 @@
     <meta property="og:title" content="AutoPlot Excel Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,21 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Data Check Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/p_ex_check.png" alt="" data-image-width="1549" data-image-height="743">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>N</i>
+            <sub><i>col</i>
+            </sub> : number of columns in a sheet<br>&nbsp;&nbsp;time<sub><i>x, y, z</i>
+            </sub>, freq<sub><i>x, y, z</i>
+            </sub> : time-history and frequency sheets of each direction<br>&nbsp;&nbsp;<i>N</i>
+            <sub><i>IERS</i>
+            </sub> : number of IERS curves<br>&nbsp;&nbsp;<i>a</i>
+            <sub><i>max</i>
+            </sub> : maximum acceleration<br>&nbsp;&nbsp;<i>g</i> : acceleration of gravity</span>
+          <br>
+          <br>IERS and RRS have different frequency points, so the layout and range of the Excel sheets must be checked before comparing.<br>The program finds the frequency and acceleration columns in each sheet and maps which data are compared for each group and direction.<br>This step prevents comparing the wrong curves.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -280,9 +289,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Analysis IERS Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/p_ex_iers.png" alt="" data-image-width="1512" data-image-height="768">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>A</i>
+            <sub><i>n</i>
+            </sub>(<i>f</i>) : ratio of IERS n to the RRS<br>&nbsp;&nbsp;IERS<sub><i>n</i>
+            </sub>(<i>f</i>) : n-th analysis in-equipment response spectrum<br>&nbsp;&nbsp;RRS(<i>f</i>) : required response spectrum (linear interpolation)<br>&nbsp;&nbsp;<i>A</i>
+            <sub><i>max</i>
+            </sub> : largest ratio over all curves and frequencies<br>&nbsp;&nbsp;criterion : limit above which the ratio is labeled</span>
+          <br>
+          <br>IERS (In-Equipment Response Spectrum) is the response spectrum at the location of a component mounted inside the equipment, and it shows the level the component must withstand.<br>The program compares the analysis IERS with the component RRS on the same frequency axis, calculates the ratio, and labels the ratio where the RRS fails to envelop the IERS.<br>This ratio is the criterion for judging whether the component qualification is sufficient.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +339,23 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Test vs Analysis Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/p_ex_test.png" alt="" data-image-width="1575" data-image-height="768">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>r</i>(<i>f</i>) : ratio of analysis IERS to test IERS<br>&nbsp;&nbsp;IERS<sub><i>A, n</i>
+            </sub>(<i>f</i>) : n-th analysis IERS<br>&nbsp;&nbsp;IERS<sub><i>T</i>
+            </sub>(<i>f</i>) : test IERS<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>p</i>
+            </sub>, <i>r</i>
+            <sub><i>p</i>
+            </sub> : frequency and ratio of the peak in each band<br>&nbsp;&nbsp;<i>r</i>
+            <sub><i>dir</i>
+            </sub>(<i>f</i>
+            <sub><i>p</i>
+            </sub>) : largest peak ratio of a direction over all groups</span>
+          <br>
+          <br>Analysis results depend on model assumptions, so they are compared with the IERS measured in testing to confirm the analysis is valid.<br>The program finds the exceedance ranges from the ratio of the two spectra and compares the peaks in each frequency band.<br>This shows whether the analysis predicted the actual behavior conservatively.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +397,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">New RRS Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/p_ex_new.png" alt="" data-image-width="1512" data-image-height="768">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>g</i>
+            <sub><i>p</i>
+            </sub> : required level at the peak frequency<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>p</i>
+            </sub> : peak frequency (broadened by ±15 %)<br>&nbsp;&nbsp;RRS(<i>f</i>
+            <sub><i>p</i>
+            </sub>) : existing RRS at the peak frequency<br>&nbsp;&nbsp;NewRRS(<i>f</i>) : new required response spectrum<br>&nbsp;&nbsp;1.10 : margin factor<br>&nbsp;&nbsp;<i>H</i>, <i>V</i> : horizontal and vertical directions</span>
+          <br>
+          <br>When the existing RRS falls short in some ranges, the RRS for the next test must be redefined.<br>The program reflects frequency uncertainty with Peak Broadening, applies a margin, and builds the envelope with the existing RRS.<br>The resulting test input satisfies the required level across the whole range.
+        </p>
         <a href="AutoPlot-Excel-to-Word.html" data-page-id="63311855" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="AutoPlot Excel to Word">Return to the AutoPlot Excel to Word Page</a>
       </div>
     </section>

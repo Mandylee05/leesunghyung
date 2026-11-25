@@ -31,7 +31,7 @@
     <meta property="og:title" content="Extract Nodal Load Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,14 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">File Reading Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/e_ex_read.png" alt="" data-image-width="1537" data-image-height="1033">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;num : pattern of a numeric token<br>&nbsp;&nbsp;<i>d</i>
+            <sup>+</sup> : one or more digits<br>&nbsp;&nbsp;[±] : optional sign<br>&nbsp;&nbsp;<i>E</i> : exponent mark</span>
+          <br>
+          <br>ANSYS output files differ in encoding and line format depending on version and settings, so reading them reliably comes first.<br>The program tries several encodings in turn, splits each line on whitespace and keeps only the numeric tokens.<br>Values in exponent notation or with negative signs are not missed this way.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +281,28 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Total Values Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/e_ex_total.png" alt="" data-image-width="1537" data-image-height="642">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<b>T</b> : total reaction (sum of all supports)<br>&nbsp;&nbsp;VALUE<sub><i>last</i>
+            </sub> : last VALUE row in the file<br>&nbsp;&nbsp;<i>F</i>
+            <sub><i>X</i>
+            </sub>, <i>F</i>
+            <sub><i>Y</i>
+            </sub>, <i>F</i>
+            <sub><i>Z</i>
+            </sub> : reaction forces<br>&nbsp;&nbsp;<i>M</i>
+            <sub><i>X</i>
+            </sub>, <i>M</i>
+            <sub><i>Y</i>
+            </sub>, <i>M</i>
+            <sub><i>Z</i>
+            </sub> : reaction moments<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>num</i>
+            </sub> : number of numeric tokens in a row</span>
+          <br>
+          <br>The TOTAL value in the reaction output is the sum of all support reactions and should equal the seismic load applied to the whole model.<br>The program reads the last TOTAL block in the file and falls back to the VALUE row when the format differs.<br>This value serves as a check that every node result was read.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +342,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Node Results Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/e_ex_node.png" alt="" data-image-width="1524" data-image-height="756">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>N</i> : node number (positive integer)<br>&nbsp;&nbsp;<i>ℤ</i>
+            <sup>+</sup> : set of positive integers<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>num</i>
+            </sub> : number of numeric tokens in a row<br>&nbsp;&nbsp;<i>F</i>, <i>M</i> : reaction forces and moments<br>&nbsp;&nbsp;<i>k</i> : row index</span>
+          <br>
+          <br>The anchor check needs FX, FY and FZ at each support node.<br>The program keeps only the rows that start with a node number and preserves the output order so the values are easy to compare with the original table.<br>These values become the input for the bolt tension and shear check.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +393,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Excel Output Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/e_ex_excel.png" alt="" data-image-width="1902" data-image-height="819">
+        <p class="u-align-center u-text u-text-1">When the results for each direction are in separate files, mistakes creep in while moving them into a calculation.<br>The program creates a sheet for each direction and writes the node values and totals in the same format.<br>With no manual copying, transfer errors are reduced as well.
+        </p>
         <a href="Extract-Nodal-Load.html" data-page-id="95282656" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Extract Nodal Load">Return to the Extract Nodal Load Page</a>
       </div>
     </section>

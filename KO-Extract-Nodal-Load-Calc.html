@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO Extract Nodal Load Calc">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">파일 읽기 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/e_ex_read.png" alt="" data-image-width="1537" data-image-height="1033">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;num : 숫자 토큰의 형식<br>&nbsp;&nbsp;<i>d</i>
+            <sup>+</sup> : 한 자리 이상의 숫자<br>&nbsp;&nbsp;[±] : 부호(있을 수도 없을 수도 있음)<br>&nbsp;&nbsp;<i>E</i> : 지수 표기</span>
+          <br>
+          <br>ANSYS 출력 파일은 버전과 설정에 따라 인코딩과 줄 형식이 다르기 때문에, 우선 파일을 안정적으로 읽는 것이 중요합니다.<br>프로그램은 여러 인코딩을 차례로 시도하고, 각 줄을 공백 기준으로 나눈 뒤 숫자 토큰만 골라 냅니다.<br>이렇게 하면 지수 표기나 음수가 섞인 값도 놓치지 않습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +280,27 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">합계값 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/e_ex_total.png" alt="" data-image-width="1537" data-image-height="642">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<b>T</b> : 전체 반력(모든 지지점의 합)<br>&nbsp;&nbsp;VALUE<sub><i>last</i>
+            </sub> : 파일의 마지막 VALUE 행<br>&nbsp;&nbsp;<i>F</i>
+            <sub><i>X</i>
+            </sub>, <i>F</i>
+            <sub><i>Y</i>
+            </sub>, <i>F</i>
+            <sub><i>Z</i>
+            </sub> : 반력<br>&nbsp;&nbsp;<i>M</i>
+            <sub><i>X</i>
+            </sub>, <i>M</i>
+            <sub><i>Y</i>
+            </sub>, <i>M</i>
+            <sub><i>Z</i>
+            </sub> : 반력 모멘트<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>num</i>
+            </sub> : 한 행의 숫자 토큰 수</span>
+          <br>
+          <br>반력 출력의 TOTAL 값은 모든 지지점 반력의 합으로, 모델 전체에 작용한 지진 하중과 같아야 합니다.<br>프로그램은 파일의 마지막 TOTAL 블록을 읽고, 형식이 다를 때는 VALUE 행으로 대체합니다.<br>그래서 이 값으로 Node별 결과가 빠짐없이 읽혔는지 검산할 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +340,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Node 결과 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/e_ex_node.png" alt="" data-image-width="1524" data-image-height="756">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>N</i> : Node 번호(양의 정수)<br>&nbsp;&nbsp;<i>ℤ</i>
+            <sup>+</sup> : 양의 정수 집합<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>num</i>
+            </sub> : 한 행의 숫자 토큰 수<br>&nbsp;&nbsp;<i>F</i>, <i>M</i> : 반력과 반력 모멘트<br>&nbsp;&nbsp;<i>k</i> : 행 번호</span>
+          <br>
+          <br>Anchor 검토에는 각 지지 Node의 FX, FY, FZ가 필요합니다.<br>프로그램은 Node 번호로 시작하는 행만 골라 내고, 출력 순서를 유지해서 원래 표와 쉽게 대조할 수 있게 합니다.<br>이렇게 정리한 값이 이후 Bolt 인장·전단 검토의 입력이 됩니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +390,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Excel 출력 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/e_ex_excel.png" alt="" data-image-width="1902" data-image-height="819">
+        <p class="u-align-center u-text u-text-1">방향별 결과가 서로 다른 파일에 있으면, 계산서로 옮길 때 실수가 생기기 쉽습니다.<br>프로그램은 방향마다 시트를 만들고, Node별 값과 합계를 같은 서식으로 씁니다.<br>손으로 복사하는 과정이 없어지므로 전달 오류도 줄어듭니다.
+        </p>
         <a href="KO-Extract-Nodal-Load.html" data-page-id="24772731" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Extract Nodal Load">Nodal Load 추출 페이지로 돌아가기</a>
       </div>
     </section>

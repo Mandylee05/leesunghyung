@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO AutoPlot Excel Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,20 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">데이터 확인 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/p_ex_check.png" alt="" data-image-width="1549" data-image-height="743">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>N</i>
+            <sub><i>col</i>
+            </sub> : 시트의 열 수<br>&nbsp;&nbsp;time<sub><i>x, y, z</i>
+            </sub>, freq<sub><i>x, y, z</i>
+            </sub> : 방향별 시간이력·진동수 시트<br>&nbsp;&nbsp;<i>N</i>
+            <sub><i>IERS</i>
+            </sub> : IERS 곡선 수<br>&nbsp;&nbsp;<i>a</i>
+            <sub><i>max</i>
+            </sub> : 최대 가속도<br>&nbsp;&nbsp;<i>g</i> : 중력가속도</span>
+          <br>
+          <br>IERS와 RRS는 진동수 점이 서로 달라서, 비교하기 전에 Excel 시트의 구성과 범위를 먼저 확인해야 합니다.<br>프로그램은 시트마다 진동수와 가속도 열을 찾고, 그룹·방향별로 어느 데이터끼리 비교할지 매핑합니다.<br>이 단계 덕분에 엉뚱한 곡선끼리 비교하는 실수를 막을 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +287,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">해석 IERS (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/p_ex_iers.png" alt="" data-image-width="1512" data-image-height="768">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>A</i>
+            <sub><i>n</i>
+            </sub>(<i>f</i>) : n번째 IERS와 RRS의 비율<br>&nbsp;&nbsp;IERS<sub><i>n</i>
+            </sub>(<i>f</i>) : n번째 해석 IERS<br>&nbsp;&nbsp;RRS(<i>f</i>) : 요구 응답 Spectrum(선형 보간)<br>&nbsp;&nbsp;<i>A</i>
+            <sub><i>max</i>
+            </sub> : 모든 곡선·진동수에서의 최대 비율<br>&nbsp;&nbsp;criterion : 비율을 표기하는 기준값</span>
+          <br>
+          <br>IERS(In-Equipment Response Spectrum)는 기기 안에 부착된 부품 위치의 응답 Spectrum으로, 그 부품이 견뎌야 하는 수준을 나타냅니다.<br>프로그램은 해석 IERS와 부품의 RRS를 같은 진동수 축에서 비교해 비율을 구하고, RRS가 IERS를 포락하지 못하는 구간에 비율을 표기합니다.<br>이 비율이 부품 검증이 충분한지 판단하는 기준이 됩니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +337,22 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">시험 vs 해석 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/p_ex_test.png" alt="" data-image-width="1575" data-image-height="768">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>r</i>(<i>f</i>) : 해석 IERS와 시험 IERS의 비율<br>&nbsp;&nbsp;IERS<sub><i>A, n</i>
+            </sub>(<i>f</i>) : n번째 해석 IERS<br>&nbsp;&nbsp;IERS<sub><i>T</i>
+            </sub>(<i>f</i>) : 시험 IERS<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>p</i>
+            </sub>, <i>r</i>
+            <sub><i>p</i>
+            </sub> : 구간별 Peak의 진동수와 비율<br>&nbsp;&nbsp;<i>r</i>
+            <sub><i>dir</i>
+            </sub>(<i>f</i>
+            <sub><i>p</i>
+            </sub>) : 방향별로 모든 그룹 중 최대 Peak 비율</span>
+          <br>
+          <br>해석은 모델 가정에 따라 결과가 달라지기 때문에, 시험에서 측정한 IERS와 비교해서 해석이 타당한지 확인합니다.<br>프로그램은 두 Spectrum의 비율로 초과 구간을 찾고, 진동수 구간별 Peak를 비교합니다.<br>이를 통해 해석이 실제 거동을 보수적으로 예측했는지 알 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +394,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">New RRS (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/p_ex_new.png" alt="" data-image-width="1512" data-image-height="768">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>g</i>
+            <sub><i>p</i>
+            </sub> : Peak 진동수에서의 요구 수준<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>p</i>
+            </sub> : Peak 진동수(±15 % 확장)<br>&nbsp;&nbsp;RRS(<i>f</i>
+            <sub><i>p</i>
+            </sub>) : Peak 진동수에서의 기존 RRS<br>&nbsp;&nbsp;NewRRS(<i>f</i>) : 새 요구 응답 Spectrum<br>&nbsp;&nbsp;1.10 : 여유 계수<br>&nbsp;&nbsp;<i>H</i>, <i>V</i> : 수평·수직 방향</span>
+          <br>
+          <br>기존 RRS가 일부 구간에서 부족하면, 다음 시험에 쓸 RRS를 다시 정해야 합니다.<br>프로그램은 Peak 확장(Peak Broadening)으로 진동수 불확실성을 반영하고, 여유를 곱한 뒤 기존 RRS와의 Envelope을 만듭니다.<br>이렇게 하면 모든 구간에서 요구 수준을 만족하는 시험 입력을 만들 수 있습니다.
+        </p>
         <a href="KO-AutoPlot-Excel-to-Word.html" data-page-id="200245657" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="AutoPlot Excel to Word">AutoPlot Excel→Word 페이지로 돌아가기</a>
       </div>
     </section>

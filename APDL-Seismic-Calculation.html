@@ -31,7 +31,7 @@
     <meta property="og:title" content="APDL Seismic Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -234,12 +234,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Model Loading Example</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/a_ex_model.png" alt="" data-image-width="1449" data-image-height="730">
-        </div>
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>N</i>
+            <sub><i>node</i>
+            </sub> : number of nodes (rows in NBLOCK)<br>&nbsp;&nbsp;<i>N</i>
+            <sub><i>elem</i>
+            </sub> : number of elements (largest id in EBLOCK)<br>&nbsp;&nbsp;NBLOCK, EBLOCK : node and element blocks of the .dat file<br>&nbsp;&nbsp;/solu … /wb, file, end : solution commands that are removed<br>&nbsp;&nbsp;CMBLOCK, BCS : component and boundary-condition blocks that are kept</span>
+          <br>
+          <br>To generate seismic analysis code automatically, the structure of the model exported from Workbench (.dat) must be known first.<br>The program reads the number of nodes and elements and removes the sections that already contain solution commands.<br>This avoids conflicts with the new Modal and Spectrum commands.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -279,10 +284,24 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Modal Analysis Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/a_ex_modal.png" alt="" data-image-width="1512" data-image-height="781">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<b>K</b>, <b>M</b> : stiffness and mass matrices<br>&nbsp;&nbsp;<i>ω</i>
+            <sub><i>i</i>
+            </sub> : natural circular frequency of mode i [rad/s]<br>&nbsp;&nbsp;<b><i>φ</i></b>
+            <sub><i>i</i>
+            </sub> : mode shape of mode i<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>i</i>
+            </sub> : natural frequency of mode i [Hz]<br>&nbsp;&nbsp;Γ<sub><i>i</i>
+            </sub> : participation factor of mode i<br>&nbsp;&nbsp;<b>r</b> : influence vector of the excitation direction<br>&nbsp;&nbsp;<i>m</i>
+            <sub><i>eff,i</i>
+            </sub> : effective mass of mode i<br>&nbsp;&nbsp;<i>M</i>
+            <sub><i>total</i>
+            </sub> : total mass of the model</span>
+          <br>
+          <br>Response Spectrum analysis is based on the natural frequencies and mode shapes of the structure, so a Modal analysis comes first.<br>Modal analysis solves the eigenvalue problem formed by the stiffness and mass matrices, and the Participation Factor tells how strongly each mode responds to an earthquake in each direction.<br>This step identifies the modes that govern the seismic response.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -322,10 +341,27 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Response Spectrum Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/a_ex_rs.png" alt="" data-image-width="1575" data-image-height="730">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="block-7">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>S</i>
+            <sub><i>a</i>
+            </sub>(<i>f</i>
+            <sub><i>i</i>
+            </sub>) : spectral acceleration at f<sub><i>i</i>
+            </sub> read from the RRS<br>&nbsp;&nbsp;<i>ζ</i> : damping ratio (3 %)<br>&nbsp;&nbsp;<i>q</i>
+            <sub><i>i</i>
+            </sub> : modal response of mode i<br>&nbsp;&nbsp;Γ<sub><i>i</i>
+            </sub>, <i>ω</i>
+            <sub><i>i</i>
+            </sub> : participation factor and circular frequency of mode i<br>&nbsp;&nbsp;<i>R</i>
+            <sub><i>i</i>
+            </sub> : response of mode i<br>&nbsp;&nbsp;<i>R</i>
+            <sub><i>ZPA</i>
+            </sub> : residual rigid response at the ZPA<br>&nbsp;&nbsp;<i>R</i> : combined response (SRSS)</span>
+          <br>
+          <br>The peak response of each mode is the spectral acceleration at that mode's frequency multiplied by its Participation Factor.<br>Modal peaks do not occur at the same time, so they are not simply added but combined with a method such as SRSS.<br>For nuclear equipment, the effect of closely spaced modes is also included according to RG 1.92.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +403,23 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Load Combination Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/a_ex_comb.png" alt="" data-image-width="1108" data-image-height="869">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left"><i>where</i>
+            <br>&nbsp;&nbsp;<i>R</i>
+            <sub><i>X</i>
+            </sub>, <i>R</i>
+            <sub><i>Y</i>
+            </sub>, <i>R</i>
+            <sub><i>Z</i>
+            </sub> : responses to the X, Y and Z excitations<br>&nbsp;&nbsp;<i>R</i>
+            <sub><i>XYZ</i>
+            </sub> : combined three-directional response<br>&nbsp;&nbsp;Set<sub><i>X, Y, Z</i>
+            </sub> : result set numbers of each direction<br>&nbsp;&nbsp;Set<sub><i>SRSS</i>
+            </sub> : result set number of the SRSS combination<br>&nbsp;&nbsp;<i>n</i>
+            <sub><i>Mode</i>
+            </sub> : number of extracted modes</span>
+          <br>
+          <br>An earthquake acts in X, Y and Z at the same time, so the results for each direction must be combined into one.<br>The program writes commands that combine the three directions by SRSS and assigns result set numbers so stresses and reactions can be checked right away.<br>The combined result is the final response used in the design check.
+        </p>
         <a href="APDL-Seismic-Analysis.html" data-page-id="31082727" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="APDL Seismic Analysis">Return to the APDL Seismic Analysis Page</a>
       </div>
     </section>

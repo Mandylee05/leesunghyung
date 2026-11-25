@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO Coherence Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -248,10 +248,20 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">FFT 계산 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/Example.png" alt="" data-image-width="4141" data-image-height="1441">
-        </div>
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>x</i>[<i>n</i>] : 시간이력의 n번째 데이터<br>&nbsp;&nbsp;<i>x</i>
+            <sub><i>even</i>
+            </sub>[<i>n</i>], <i>x</i>
+            <sub><i>odd</i>
+            </sub>[<i>n</i>] : 짝수·홀수 번째 데이터<br>&nbsp;&nbsp;<i>N</i> : 데이터 수<br>&nbsp;&nbsp;<i>E</i>[<i>k</i>], <i>O</i>[<i>k</i>] : 짝수·홀수 데이터의 FFT<br>&nbsp;&nbsp;<i>W</i>
+            <sub><i>N</i>
+            </sub>
+            <sup><i>k</i>
+            </sup> : Twiddle Factor, e<sup>−<i>j</i>2π<i>k</i>/<i>N</i>
+            </sup>
+            <br>&nbsp;&nbsp;<i>X</i>[<i>k</i>] : k번째 주파수 칸의 FFT 결과<br>&nbsp;&nbsp;<i>fs</i> : Sampling 주파수 [Hz]<br>&nbsp;&nbsp;<i>j</i> : 허수 단위</span>
+          <br>
+          <br>Coherence는 두 신호를 주파수별로 비교하는 값이기 때문에, 우선 시간이력을 주파수 영역으로 바꿔야 합니다.<br>FFT는 DFT의 연산량을 N log N 수준으로 줄인 방법으로, Bit Reversal 정렬과 Butterfly 연산을 반복해서 각 주파수 성분의 크기와 위상을 구합니다.<br>이 결과가 이후 PSD와 CSD 계산의 재료가 됩니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -292,9 +302,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">PSD 계산 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/Example-1.png" alt="" data-image-width="1894" data-image-height="770">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;Power spectrum : FFT 결과 크기의 제곱<br>&nbsp;&nbsp;PSD : 파워 스펙트럼 밀도<br>&nbsp;&nbsp;<i>N</i> : 데이터 수</span>
+          <br>
+          <br>PSD는 한 신호의 에너지가 어느 주파수에 모여 있는지를 보여 줍니다.<br>FFT 결과의 크기를 제곱해서 Power Spectrum을 구하고, 데이터 길이로 나눠 단위 주파수당 값으로 정규화합니다.<br>Coherence 식의 분모에 두 신호의 PSD가 들어가기 때문에, 이 값이 있어야 상관성을 0~1 사이로 나타낼 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -335,9 +347,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">CSD 계산 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/Example-2.png" alt="" data-image-width="1889" data-image-height="762">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;FFT results<sub>1</sub>, FFT results<sub>2</sub> : 두 신호의 FFT 결과<br>&nbsp;&nbsp;conj( ) : 켤레복소수<br>&nbsp;&nbsp;Cross spectrum : 한 FFT와 다른 FFT 켤레복소수의 곱<br>&nbsp;&nbsp;CSD : 교차 스펙트럼 밀도<br>&nbsp;&nbsp;<i>N1</i>, <i>N2</i> : 두 신호의 데이터 길이</span>
+          <br>
+          <br>CSD는 두 신호가 같은 주파수에서 함께 움직이는 정도를 나타냅니다.<br>한 신호의 FFT에 다른 신호 FFT의 켤레복소수를 곱해서 구하기 때문에, 크기뿐 아니라 두 신호의 위상 차이도 담고 있습니다.<br>한마디로, Coherence 식의 분자가 되는 값이라는 뜻입니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -379,8 +393,18 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Coherence 계산 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/Example-3.png" alt="" data-image-width="3447" data-image-height="1063">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>C</i>
+            <sub><i>x,y</i>
+            </sub>(<i>f</i>) : 신호 x, y의 Coherence<br>&nbsp;&nbsp;<i>G</i>
+            <sub><i>xy</i>
+            </sub>(<i>f</i>) : x, y의 교차 스펙트럼 밀도(CSD)<br>&nbsp;&nbsp;<i>G</i>
+            <sub><i>xx</i>
+            </sub>(<i>f</i>), <i>G</i>
+            <sub><i>yy</i>
+            </sub>(<i>f</i>) : x, y 각각의 PSD<br>&nbsp;&nbsp;<i>f</i> : 진동수 [Hz]</span>
+          <br>
+          <br>Coherence는 CSD 크기의 제곱을 두 PSD의 곱으로 나눈 값으로, 0이면 두 신호가 서로 무관하고 1이면 완전한 선형 관계라는 뜻입니다.<br>내진검증에서는 3방향 지진 입력이 서로 독립이어야 하므로, 이 값으로 입력 시간이력을 확인합니다.<br>여러 구간을 나눠 평균(Welch 방법)해야 잡음 때문에 값이 1에 가깝게 치우치는 것을 막을 수 있습니다.
+        </p>
         <a href="KO-Coherence.html" data-page-id="43123098" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="Coherence">Coherence 페이지로 돌아가기</a>
       </div>
     </section>

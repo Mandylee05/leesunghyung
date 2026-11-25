@@ -31,7 +31,7 @@
     <meta property="og:title" content="KO FFT Analyzer Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -236,10 +236,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-3">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <div class="u-align-center u-clearfix u-group-elements u-group-elements-1">
-          <h2 class="u-align-center u-text u-text-default u-text-1">Sampling 확인 (예제문제)</h2>
-          <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_sampling.png" alt="" data-image-width="1701" data-image-height="819">
-        </div>
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>dt</i> : 데이터 사이의 시간 간격<br>&nbsp;&nbsp;<i>t</i>
+            <sub>0</sub>, <i>t</i>
+            <sub><i>N</i>−1
+            </sub> : 첫 데이터와 마지막 데이터의 시간<br>&nbsp;&nbsp;<i>N</i> : 데이터 수<br>&nbsp;&nbsp;<i>F</i>
+            <sub><i>s</i>
+            </sub> : Sampling 주파수<br>&nbsp;&nbsp;Δ<i>f</i> : 주파수 분해능<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>Nyq</i>
+            </sub> : Nyquist 주파수</span>
+          <br>
+          <br>FFT 결과는 Sampling 조건에 따라 정해지기 때문에, 우선 시간 간격(dt)과 데이터 수(N)를 확인해야 합니다.<br>Sampling 주파수 Fs = 1/dt의 절반인 Nyquist 주파수보다 높은 성분은 Aliasing으로 왜곡되고, 주파수 분해능은 Fs/N으로 정해집니다.<br>내진검증의 관심 범위가 0.5~50 Hz이므로, Nyquist 주파수가 50 Hz보다 충분히 높은지 먼저 봅니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-bb3c">
@@ -280,9 +287,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">FFT 계산 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_fft.png" alt="" data-image-width="1449" data-image-height="882">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>X</i>[<i>k</i>] : k번째 주파수 칸의 FFT 결과(복소수)<br>&nbsp;&nbsp;<i>x</i>[<i>n</i>] : 시간이력의 n번째 데이터<br>&nbsp;&nbsp;<i>k</i>, <i>n</i> : 주파수 칸 번호와 데이터 번호<br>&nbsp;&nbsp;<i>N</i> : 데이터 수<br>&nbsp;&nbsp;<i>j</i> : 허수 단위<br>&nbsp;&nbsp;<i>f</i>
+            <sub><i>k</i>
+            </sub> : k번째 주파수 칸의 진동수<br>&nbsp;&nbsp;<i>F</i>
+            <sub><i>s</i>
+            </sub> : Sampling 주파수</span>
+          <br>
+          <br>FFT는 시간이력을 여러 주파수의 정현파 합으로 분해하는 DFT를 빠르게 계산하는 방법입니다.<br>각 주파수 칸은 k·Fs/N의 주파수에 대응하고, 결과는 그 주파수 성분의 크기와 위상을 가진 복소수입니다.<br>한마디로, 시간 신호 안에 어떤 진동수가 들어 있는지 꺼내 보는 단계라는 뜻입니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-5" id="sec-f563">
@@ -323,9 +336,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-6" id="sec-6532">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Amplitude Spectrum (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_amp.png" alt="" data-image-width="1575" data-image-height="819">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>P</i>
+            <sub>2</sub>[<i>k</i>] : 양측 진폭<br>&nbsp;&nbsp;<i>P</i>
+            <sub>1</sub>[<i>k</i>] : 단측 진폭<br>&nbsp;&nbsp;|<i>X</i>[<i>k</i>]| : FFT 결과의 크기<br>&nbsp;&nbsp;<i>N</i> : 데이터 수</span>
+          <br>
+          <br>FFT 결과의 크기는 데이터 수에 비례해서 커지기 때문에, N으로 나눠 실제 진폭으로 바꿔야 합니다.<br>실수 신호의 FFT는 양의 주파수와 음의 주파수가 대칭이므로, 한쪽만 남기고 2배를 해서 단측 진폭을 구합니다.<br>이렇게 해야 Spectrum의 값을 원래 가속도 단위(G)로 읽을 수 있습니다.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-7" id="sec-8e77">
@@ -367,8 +384,15 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-8" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Peak 검출 (예제문제)</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/fft_ex_peak.png" alt="" data-image-width="1638" data-image-height="756">
+        <p class="u-align-center u-text u-text-1"><span style="display:inline-block;text-align:left">여기서<br>&nbsp;&nbsp;<i>P</i>
+            <sub>1</sub>[<i>k</i>] : k번째 칸의 단측 진폭<br>&nbsp;&nbsp;<i>h</i> : Peak 최소 진폭(0.05 G)<br>&nbsp;&nbsp;<i>k</i>
+            <sub><i>i</i>
+            </sub>, <i>k</i>
+            <sub><i>j</i>
+            </sub> : 이웃한 두 Peak의 주파수 칸 번호<br>&nbsp;&nbsp;Δ<i>f</i> : 주파수 분해능<br>&nbsp;&nbsp;<i>G</i> : 중력가속도 단위의 가속도</span>
+          <br>
+          <br>Spectrum에서 Peak가 나타나는 진동수는 구조물이나 입력이 가진 지배 진동수를 뜻합니다.<br>프로그램은 이웃 값보다 크고 최소 진폭을 넘는 점을 Peak로 찾고, Peak 사이에 최소 간격을 두어 잡음 때문에 생기는 작은 Peak를 걸러 냅니다.<br>이렇게 찾은 진동수가 내진해석에서 먼저 확인해야 할 주요 진동수가 됩니다.
+        </p>
         <a href="KO-FFT-Analyzer.html" data-page-id="2072627929" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="FFT Analyzer">FFT 분석기 페이지로 돌아가기</a>
       </div>
     </section>

@@ -27,7 +27,7 @@
     <meta property="og:title" content="SRS Analysis Calculation">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script>/* KO pages: logo goes to Korean home */document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('.ko-page')){document.querySelectorAll('.u-header [data-href="./"]').forEach(function(el){el.setAttribute('data-href','KO-Home.html');el.setAttribute('title','홈');});}});</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-gradient u-header u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <nav class="u-align-right u-dropdown-icon u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-menu-1" role="navigation" data-responsive-from="XL">
           <div class="menu-collapse">
@@ -199,10 +199,10 @@
         <img class="u-image u-image-contain u-image-default u-image-1" src="images/all.png" alt="" data-image-width="3204" data-image-height="1851">
       </div>
     </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="sec-0901">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1"> Direct Intergration Method Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/example-4.png" alt="" data-image-width="3956" data-image-height="2434">
+    <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-2" id="block-6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-center u-text u-text-1">An SRS is the curve of peak responses of many single-degree-of-freedom systems with different natural frequencies, all excited by the same acceleration.<br>Direct integration solves the equation of motion step by step in the time domain, so the idea is intuitive and it works for any input.<br>The time step, however, must be small enough to keep the result accurate.
+        </p>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-3" id="sec-6532">
@@ -213,8 +213,8 @@
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-custom-color-2 u-section-4" id="sec-cb67">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1"> Transfer Function Method Example</h2>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/example-5.png" alt="" data-image-width="3127" data-image-height="1762">
+        <p class="u-align-center u-text u-text-1">The transfer function method converts the input to the frequency domain with FFT, multiplies it by the SDOF transfer function, and returns to the time domain with an inverse FFT.<br>Since each frequency needs only a multiplication, it is fast when many natural frequencies are calculated at once.<br>It reaches the same result as direct integration by a different path, so comparing the two serves as a cross-check.
+        </p>
         <a href="SRS-Analysis-Transfer.html" data-page-id="100247550" class="u-active-custom-color-3 u-btn u-button-style u-custom-color-1 u-hover-custom-color-1 u-btn-1" title="SRS Analysis Transfer">Return to the SRS Anlaysis Page</a>
       </div>
     </section>
